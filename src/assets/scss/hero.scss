@@ -1,0 +1,52 @@
+#hero {
+    .bd-hero {
+        --color: #7a7a7a;
+        --color-strong: #363636;
+        --icon-dimensions: 1.125em;
+        --icon-spacing: 0.25em;
+        background-color: var(--background-color);
+
+        @media screen and (min-width: 1024px) {
+            --icon-spacing: 0.5em;
+        }
+
+        &.bd-is-success {
+            --background-color: var(--success-light);
+            --color-strong: var(--success-dark);
+            --color: var(--success);
+            --color-icon: var(--success);
+        }
+
+        &.bd-is-link {
+            --background-color: var(--link-light);
+            --color-strong: var(--link-dark);
+            --color-icon: var(--link);
+        }
+
+        .bd-hero-heading {
+            .title {
+                color: var(--color-strong);
+                display: flex;
+                font-weight: 400;
+                position: relative;
+            }
+
+            .subtitle {
+                color: var(--color);
+            }
+        }
+    }
+
+    .bd-hero-body {
+        align-items: center;
+        display: grid;
+        grid-gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .bd-hero-carbon {
+        @media screen and (min-width: 672px) {
+            justify-self: flex-end;
+        }
+    }
+}

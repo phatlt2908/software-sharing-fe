@@ -1,0 +1,137 @@
+// Bulma Import
+@import "~bulma";
+
+:root {
+    --white: white;
+    --white-invert: #0a0a0a;
+    --black: #0a0a0a;
+    --black-invert: white;
+    --light: whitesmoke;
+    --light-invert: rgba(0, 0, 0, 0.7);
+    --dark: #363636;
+    --dark-invert: #fff;
+    --primary: #00d1b2;
+    --primary-invert: #fff;
+    --primary-light: #ebfffc;
+    --primary-dark: #00947e;
+    --link: #485fc7;
+    --link-invert: #fff;
+    --link-light: #eff1fa;
+    --link-dark: #3850b7;
+    --info: #3e8ed0;
+    --info-invert: #fff;
+    --info-light: #eff5fb;
+    --info-dark: #296fa8;
+    --success: #48c78e;
+    --success-invert: #fff;
+    --success-light: #effaf5;
+    --success-dark: #257953;
+    --warning: #ffe08a;
+    --warning-invert: rgba(0, 0, 0, 0.7);
+    --warning-light: #fffaeb;
+    --warning-dark: #946c00;
+    --danger: #f14668;
+    --danger-invert: #fff;
+    --danger-light: #feecf0;
+    --danger-dark: #cc0f35;
+    --expo: #ffd257;
+    --expo-invert: white;
+    --expo-light: #fffaeb;
+    --expo-dark: #946c00;
+    --love: #f14668;
+    --love-invert: white;
+    --love-light: #feecf0;
+    --love-dark: #cc0f35;
+    --patreon: #f96854;
+    --patreon-invert: white;
+    --patreon-light: #feeeeb;
+    --patreon-dark: #c01d07;
+    --rss: #f26522;
+    --rss-invert: white;
+    --rss-light: #fef2ec;
+    --rss-dark: #c1460b;
+    --bleeding: #abf47c;
+    --bleeding-invert: rgba(0, 0, 0, 0.7);
+    --bleeding-light: #f3fdec;
+    --bleeding-dark: #3c880b;
+    --sass: #bf4080;
+    --sass-invert: white;
+    --sass-light: #faf0f5;
+    --sass-dark: #b03b76;
+    --amazon: #ffd863;
+    --amazon-invert: rgba(0, 0, 0, 0.7);
+    --amazon-light: #fffaeb;
+    --amazon-dark: #946f00;
+    --sponsor: #ea4aaa;
+    --sponsor-invert: white;
+    --sponsor-light: #fdedf6;
+    --sponsor-dark: #c0167c;
+    --twitter: #55acee;
+    --twitter-invert: white;
+    --twitter-light: #ecf6fd;
+    --twitter-dark: #10609e;
+    --videos: #48c78e;
+    --videos-invert: white;
+    --videos-light: #effaf5;
+    --videos-dark: #257953;
+    --extensions: #3e8ed0;
+    --extensions-invert: white;
+    --extensions-light: #eff5fb;
+    --extensions-dark: #296fa8;
+    --bootstrap: #6f5499;
+    --bootstrap-invert: white;
+    --bootstrap-light: #f4f2f8;
+    --bootstrap-dark: #73579e;
+    --bootstrap: #6f5499;
+    --github: #333333;
+    --twitter: #55acee;
+    --patreon: #f96854;
+    --patreon-blue: #052d49;
+    --fortyfour: #5f45bb;
+    --amazon: #ffd863;
+    --bleeding-green: #abf47c;
+    --bleeding-red: #ca1f26;
+    --rss: #f26522;
+    --search: #00d1b2;
+    --search-light: #ebfffc;
+    --search-dark: #00947e;
+    --html5: #e44d26;
+    --html5-invert: #ebebeb;
+    --hl-green: #37e7ac;
+    --hl-cyan: #51fbde;
+    --hl-blue: #00b2ff;
+    --hl-purple: #9a89b4;
+    --hl-lavender: #9b6dff;
+    --hl-pink: #ff5cd3;
+    --hl-rose: #ff6b9d;
+    --hl-orange: #ff9970;
+    --hl-yellow: #fed604;
+    --hl-gray-01: #d9e0e8;
+    --hl-gray-02: #808182;
+    --hl-gray-09: #1f2330;
+    --hl-color: var(--hl-orange);
+    --hl-background: var(--hl-gray-09);
+    --container-width: calc(100vw - 3rem);
+    --container-width-desktop: 960px;
+    --container-width-widescreen: 1152px;
+    --container-width-fullhd: 1344px;
+}
+
+.bd-index-content {
+    .title {
+        color: #363636;
+        font-size: 3em;
+        font-weight: 400;
+        position: relative;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+
+    .icon-text {
+        strong {
+            color: inherit;
+        }
+    }
+}
