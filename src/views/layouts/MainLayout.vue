@@ -17,9 +17,9 @@
             </li>
           </ul>
         </nav>
-        <router-view></router-view>
       </div>
     </section>
+    <router-view></router-view>
   </body>
 </template>
 

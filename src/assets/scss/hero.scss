@@ -23,12 +23,45 @@
             --color-icon: var(--link);
         }
 
+        &.bd-is-office {
+            --background-color: var(--office-light);
+            --color-strong: var(--office-dark);
+            --color: var(--office);
+            --color-icon: var(--office);
+        }
+
+        &.bd-is-game {
+            --background-color: var(--game-light);
+            --color-strong: var(--game);
+            --color-icon: var(--game);
+        }
+
+        &.bd-is-tech {
+            --background-color: var(--tech-light);
+            --color-strong: var(--tech-dark);
+            --color-icon: var(--tech);
+        }
+
         .bd-hero-heading {
             .title {
                 color: var(--color-strong);
                 display: flex;
                 font-weight: 400;
                 position: relative;
+
+                .icon {
+                    color: var(--color-icon);
+                    height: var(--icon-dimensions);
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    margin-right: var(--icon-spacing);
+                    width: var(--icon-dimensions);
+
+                    @media screen and (min-width: 1024px) {
+                        margin-left: calc(-1 * (var(--icon-dimensions) + var(--icon-spacing)));
+                        margin-right: var(--icon-spacing);
+                    }
+                }
             }
 
             .subtitle {

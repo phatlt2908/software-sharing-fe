@@ -41,7 +41,7 @@
             <span>Trang chủ</span>
           </router-link>
           <router-link :to="{ name: 'game' }" class="navbar-item">
-            <span class="icon has-text-link">
+            <span class="icon has-text-danger">
               <font-awesome-icon icon="gamepad" />
             </span>
             <span>Games</span>
@@ -58,19 +58,19 @@
             </span>
             <span>Đồ họa</span>
           </router-link>
-          <router-link :to="{ name: 'home' }" class="navbar-item">
+          <router-link :to="{ name: 'technique' }" class="navbar-item">
             <span class="icon has-text-warning">
               <font-awesome-icon icon="drafting-compass" />
             </span>
             <span>Kỹ thuật</span>
           </router-link>
-          <router-link :to="{ name: 'home' }" class="navbar-item">
-            <span class="icon has-text-danger">
+          <router-link :to="{ name: 'os' }" class="navbar-item">
+            <span class="icon has-text-link">
               <font-awesome-icon :icon="['fab', 'windows']" />
             </span>
             <span>Hệ điều hành</span>
           </router-link>
-          <router-link :to="{ name: 'home' }" class="navbar-item">
+          <router-link :to="{ name: 'common' }" class="navbar-item">
             <span class="icon has-text-black">
               <font-awesome-icon icon="file-archive" />
             </span>
@@ -87,11 +87,11 @@
             </router-link>
             <div class="navbar-dropdown is-boxed">
               <router-link :to="{ name: 'home' }" class="navbar-item">
-                Mẹo minecraft
+                Diệt virus
               </router-link>
               <hr class="navbar-divider" />
               <router-link :to="{ name: 'home' }" class="navbar-item">
-                Mods
+                APK
               </router-link>
             </div>
           </div>

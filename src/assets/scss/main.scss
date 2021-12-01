@@ -34,14 +34,14 @@
     --danger-invert: #fff;
     --danger-light: #feecf0;
     --danger-dark: #cc0f35;
-    --expo: #ffd257;
-    --expo-invert: white;
-    --expo-light: #fffaeb;
-    --expo-dark: #946c00;
-    --love: #f14668;
-    --love-invert: white;
-    --love-light: #feecf0;
-    --love-dark: #cc0f35;
+    --tech: #ffd257;
+    --tech-invert: white;
+    --tech-light: #fffaeb;
+    --tech-dark: #946c00;
+    --game: #f14668;
+    --game-invert: white;
+    --game-light: #feecf0;
+    --game-dark: #cc0f35;
     --patreon: #f96854;
     --patreon-invert: white;
     --patreon-light: #feeeeb;
@@ -74,10 +74,10 @@
     --videos-invert: white;
     --videos-light: #effaf5;
     --videos-dark: #257953;
-    --extensions: #3e8ed0;
-    --extensions-invert: white;
-    --extensions-light: #eff5fb;
-    --extensions-dark: #296fa8;
+    --office: #3e8ed0;
+    --office-invert: white;
+    --office-light: #eff5fb;
+    --office-dark: #296fa8;
     --bootstrap: #6f5499;
     --bootstrap-invert: white;
     --bootstrap-light: #f4f2f8;
@@ -133,5 +133,17 @@
         strong {
             color: inherit;
         }
+    }
+}
+
+.card {
+    box-shadow: none;
+    cursor: pointer;
+    transition-duration: 172ms;
+    transition-property: box-shadow, transform;
+
+    &:hover {
+        box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+        transform: translateY(-0.5em);
     }
 }

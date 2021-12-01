@@ -49,7 +49,7 @@ const routes = [
         }
       },
       {
-        path: screenConst.OFFICE.path,
+        path: screenConst.GRAPHIC.path,
         component: () => import('@/views/screens/Category'),
         name: 'graphic',
         meta: {
@@ -57,6 +57,39 @@ const routes = [
           content: 'Tải phần mềm đồ họa, download phần mềm đồ họa miễn phí',
           active: 'graphic',
           breadcrumb: [screenConst.HOME, screenConst.GRAPHIC]
+        }
+      },
+      {
+        path: screenConst.TECHNIQUE.path,
+        component: () => import('@/views/screens/Category'),
+        name: 'technique',
+        meta: {
+          title: 'Phần mềm kỹ thuật',
+          content: 'Tải phần mềm kỹ thuật, download phần mềm kỹ thuật miễn phí',
+          active: 'technique',
+          breadcrumb: [screenConst.HOME, screenConst.TECHNIQUE]
+        }
+      },
+      {
+        path: screenConst.OS.path,
+        component: () => import('@/views/screens/Category'),
+        name: 'os',
+        meta: {
+          title: 'Windows, hệ điều hành, ghost',
+          content: 'Hướng dẫn tải, cài đặt hệ điều hành, windows, ghost win miễn phí',
+          active: 'os',
+          breadcrumb: [screenConst.HOME, screenConst.OS]
+        }
+      },
+      {
+        path: screenConst.COMMON.path,
+        component: () => import('@/views/screens/Category'),
+        name: 'common',
+        meta: {
+          title: 'Ai cũng cần',
+          content: 'Phần mềm cơ bản mà bất cứ máy tính nào cũng cần đến',
+          active: 'common',
+          breadcrumb: [screenConst.HOME, screenConst.COMMON]
         }
       }
     ]

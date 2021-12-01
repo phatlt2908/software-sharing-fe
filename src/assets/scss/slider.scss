@@ -1,0 +1,62 @@
+#slider {
+    margin-bottom: 2rem;
+
+    .bd-best {
+        height: calc(500px + 3rem);
+        padding: 1.5rem 0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .bd-best-list {
+        align-items: stretch;
+        -webkit-animation-duration: 93.6s;
+        animation-duration: 93.6s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        display: flex;
+        left: 0;
+        position: absolute;
+        top: 1.5rem;
+        -webkit-animation-name: bdBestCarousel;
+        animation-name: bdBestCarousel;
+    }
+
+    .bd-best-list:hover {
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused;
+    }
+
+    .bd-best-item {
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 16px;
+        width: 300px;
+        cursor: pointer;
+
+        .bd-is-medium {
+            font-size: 1.125em;
+        }
+
+        .bd-is-large {
+            font-size: 1.25em;
+        }
+
+        .bd-is-huge {
+            font-size: 1.5em;
+        }
+    }
+
+    @-webkit-keyframes bdBestCarousel {
+        100% {
+            transform: translateX(calc(-100% + 3120px));
+        }
+    }
+    @keyframes bdBestCarousel {
+        100% {
+            transform: translateX(calc(-100% + 3120px));
+        }
+    }
+}

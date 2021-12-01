@@ -16,6 +16,18 @@ const screen = {
         path: "graphic",
         name: "Phần mềm đồ họa"
     },
+    TECHNIQUE: {
+        path: "technique",
+        name: "Phần mềm kỹ thuật"
+    },
+    OS: {
+        path: "os",
+        name: "Windows, hệ điều hành, ghost"
+    },
+    COMMON: {
+        path: "common",
+        name: "Ai cũng cần"
+    },
 
 
 
