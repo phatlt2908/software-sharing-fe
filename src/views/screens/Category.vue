@@ -60,19 +60,7 @@
             </div>
           </div>
           <div class="column">
-            <div>
-              <iframe
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmunmeovn&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=190324515024845"
-                width="340"
-                style="border: none; overflow: hidden"
-                scrolling="no"
-                frameborder="0"
-                allowfullscreen="true"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                data-hide-cover="false"
-                data-show-facepile="false"
-              ></iframe>
-            </div>
+            <Side />
           </div>
         </div>
       </div>
@@ -82,17 +70,19 @@
 
 <script>
 import Slider from "@/views/components/Slider.vue";
+import Side from "@/views/components/Side.vue";
 
 export default {
   name: "Category",
   components: {
     Slider,
+    Side
   },
   data() {
     return {
-      itemList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      itemList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     };
-  },
+  }
 };
 </script>
 
