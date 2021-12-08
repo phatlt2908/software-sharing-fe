@@ -29,7 +29,14 @@ const screen = {
         name: "Ai cũng cần"
     },
 
-
+    ADMIN: {
+        path: "admin",
+        name: "admin"
+    },
+    ADMIN_DETAIL: {
+        path: "detail",
+        name: "Chi tiết"
+    },
 
     LOGIN: {
         path: "login",

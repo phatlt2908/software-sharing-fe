@@ -1,6 +1,7 @@
 import screenConst from './constants/screenConst'
 
 import MainLayout from '@/views/layouts/MainLayout'
+import AdminLayout from '@/views/layouts/AdminLayout'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -90,6 +91,23 @@ const routes = [
           content: 'Phần mềm cơ bản mà bất cứ máy tính nào cũng cần đến',
           active: 'common',
           breadcrumb: [screenConst.HOME, screenConst.COMMON]
+        }
+      }
+    ]
+  },
+  {
+    path: '/admin',
+    component: AdminLayout,
+    children: [
+      {
+        path: screenConst.ADMIN_DETAIL.path,
+        component: () => import('@/views/admins/Detail'),
+        name: 'detail',
+        meta: {
+          title: 'Chi tiết',
+          content: 'Chi tiết',
+          active: 'detail',
+          breadcrumb: [screenConst.ADMIN, screenConst.ADMIN_DETAIL]
         }
       }
     ]

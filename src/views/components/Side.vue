@@ -23,16 +23,9 @@
         >{{ tag }}</span
       >
     </div>
-		<div class="ads-side">
-      <span
-        v-for="tag in tagList"
-        :key="tag"
-        class="tag is-light is-primary mr-1 mb-1"
-        :class="getTagDisplay()"
-        >{{ tag }}</span
-      >
+		<div class="ads-component-side">
+      ADs
     </div>
-    <div class="ads-side"><p>adwasd</p></div>
   </div>
 </template>
 
