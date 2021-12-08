@@ -8,7 +8,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    redirect: '/' + screenConst.HOME.path,
+    redirect: screenConst.HOME.path,
     content: 'Chia sẻ phần mềm, ứng dụng, games, thủ thuật,... Giúp làm chủ được thiết bị của bạn!',
   },
   {
