@@ -117,6 +117,10 @@
     --container-width-fullhd: 1344px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .bd-index-content {
     .title {
         color: #363636;

@@ -1,7 +1,6 @@
 import screenConst from './constants/screenConst'
 
 import MainLayout from '@/views/layouts/MainLayout'
-import AdminLayout from '@/views/layouts/AdminLayout'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -33,7 +32,10 @@ const routes = [
         name: 'game',
         meta: {
           title: 'Games',
+          subtitle: "Tải game miễn phí",
           content: 'Tải game, download game OffLine miễn phí',
+          color: "bd-is-game",
+          icon: "gamepad",
           active: 'game',
           breadcrumb: [screenConst.HOME, screenConst.GAME]
         }
@@ -44,7 +46,10 @@ const routes = [
         name: 'office',
         meta: {
           title: 'Phần mềm văn phòng',
+          subtitle: "Tải phần mềm văn phòng, word, excel, powerpoint, PDF miễn phí",
           content: 'Tải phần mềm văn phòng, download phần mềm văn phòng miễn phí',
+          color: "bd-is-office",
+          icon: "print",
           active: 'office',
           breadcrumb: [screenConst.HOME, screenConst.OFFICE]
         }
@@ -55,7 +60,10 @@ const routes = [
         name: 'graphic',
         meta: {
           title: 'Phần mềm đồ họa',
+          subtitle: "Phần mềm chỉnh sửa ảnh, video miễn phí",
           content: 'Tải phần mềm đồ họa, download phần mềm đồ họa miễn phí',
+          color: "bd-is-success",
+          icon: "paint-brush",
           active: 'graphic',
           breadcrumb: [screenConst.HOME, screenConst.GRAPHIC]
         }
@@ -66,7 +74,10 @@ const routes = [
         name: 'technique',
         meta: {
           title: 'Phần mềm kỹ thuật',
+          subtitle: "Phần mềm kỹ thuật, xây dựng, dựng 2D, 3D miễn phí",
           content: 'Tải phần mềm kỹ thuật, download phần mềm kỹ thuật miễn phí',
+          color: "bd-is-tech",
+          icon: "drafting-compass",
           active: 'technique',
           breadcrumb: [screenConst.HOME, screenConst.TECHNIQUE]
         }
@@ -77,7 +88,10 @@ const routes = [
         name: 'os',
         meta: {
           title: 'Windows, hệ điều hành, ghost',
+          subtitle: "Tải Win, hướng dẫn cài Win, Ghost Win và nhiều hơn nữa",
           content: 'Hướng dẫn tải, cài đặt hệ điều hành, windows, ghost win miễn phí',
+          color: "bd-is-link",
+          icon: ['fab', 'windows'],
           active: 'os',
           breadcrumb: [screenConst.HOME, screenConst.OS]
         }
@@ -88,33 +102,33 @@ const routes = [
         name: 'common',
         meta: {
           title: 'Ai cũng cần',
+          subtitle: "Tất cả các phần mềm cơ bản mà bất cứ máy tính nào cũng cần đến",
           content: 'Phần mềm cơ bản mà bất cứ máy tính nào cũng cần đến',
+          color: "bd-is-black",
+          icon: "file-archive",
           active: 'common',
           breadcrumb: [screenConst.HOME, screenConst.COMMON]
         }
-      }
-    ]
-  },
-  {
-    path: '/admin',
-    component: AdminLayout,
-    children: [
+      },
       {
-        path: screenConst.ADMIN_DETAIL.path,
-        component: () => import('@/views/admins/Detail'),
-        name: 'detail',
+        path: screenConst.DETAIL.path,
+        component: () => import('@/views/screens/PostDetail'),
+        name: 'postDetail',
         meta: {
-          title: 'Chi tiết',
-          content: 'Chi tiết',
-          active: 'detail',
-          breadcrumb: [screenConst.ADMIN, screenConst.ADMIN_DETAIL]
+          title: 'Bài viết',
+          subtitle: "",
+          content: 'Phần mềm cơ bản mà bất cứ máy tính nào cũng cần đến',
+          color: "bd-is-black",
+          icon: "file-archive",
+          active: 'common',
+          breadcrumb: [screenConst.HOME, screenConst.COMMON]
         }
-      }
+      },
     ]
   },
   {
-    path: '/*.*',
-    redirect: '/' + screenConst.HOME.path
+    path: '/:pathMatch(.*)*',
+    redirect: screenConst.HOME.path
   }
 ]
 

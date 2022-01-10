@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "http://dayne.info/api",
+    baseURL: "http://localhost:8081",
     headers: {
         "Content-type": "application/json"
     }

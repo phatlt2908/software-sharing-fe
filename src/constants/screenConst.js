@@ -28,6 +28,10 @@ const screen = {
         path: "common",
         name: "Ai cũng cần"
     },
+    DETAIL: {
+        path: "detail",
+        name: "Bài viết"
+    },
 
     ADMIN: {
         path: "admin",
