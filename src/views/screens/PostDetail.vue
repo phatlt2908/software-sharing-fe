@@ -13,7 +13,7 @@
                   v-for="link in postLinkDownloads"
                   :key="link.id"
                   @click="directToDownload(link)"
-                  class="button is-success is-medium"
+                  class="button is-primary is-medium"
                 >
                   <span class="icon is-medium">
                     <font-awesome-icon icon="download" />
@@ -39,6 +39,12 @@
       </div>
     </section>
     <Slider />
+
+    <a href="#link" class="button is-rounded is-primary is-medium">
+      <span class="icon">
+        <font-awesome-icon icon="download" />
+      </span>
+    </a>
   </div>
 </template>
 
@@ -89,10 +95,10 @@ export default {
         });
     },
     directToDownload(link) {
-      window.open(link.url, '_blank');
-    }
+      window.open(link.url, "_blank");
+    },
   },
 };
 </script>
 
-<style lang="scss" src="@/assets/scss/category.scss"></style>
+<style lang="scss" src="@/assets/scss/postDetail.scss"></style>

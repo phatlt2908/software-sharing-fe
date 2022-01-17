@@ -119,7 +119,7 @@ const routes = [
           subtitle: "",
           content: 'Phần mềm cơ bản mà bất cứ máy tính nào cũng cần đến',
           color: "bd-is-black",
-          icon: "file-archive",
+          icon: "download",
           active: 'common',
           breadcrumb: [screenConst.HOME, screenConst.COMMON]
         }

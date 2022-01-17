@@ -1,2 +1,19 @@
 #postDetail {
+    .section {
+        position: relative;
+    }
+
+    $radius-rounded: 290486px !default;
+
+    .button {
+        &.is-rounded {
+            border-radius: $radius-rounded;
+            padding-left: 1em;
+            padding-right: 1em;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            box-shadow: 5px 5px 15px gray;
+        }
+    }
 }
