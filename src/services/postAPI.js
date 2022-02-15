@@ -13,6 +13,10 @@ class postAPI {
     getPostDetail(postCode) {
         return axios.get(apiConst.POST_DETAIL, { params: { postCode: postCode } });
     }
+
+    getPopularCategoryPost(categoryCode) {
+        return axios.get(apiConst.POPULAR_CATEGORY_POST, { params: { categoryCode: categoryCode } });
+    }
 }
 
 export default new postAPI()

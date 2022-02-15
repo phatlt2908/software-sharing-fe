@@ -8,7 +8,7 @@
         </h2>
       </div>
     </section>
-    <Slider />
+    <Slider :sliderList="popularList" />
 
     <section class="section">
       <div class="container">
@@ -71,6 +71,7 @@
 <script>
 import Slider from "@/views/components/Slider.vue";
 import Side from "@/views/components/Side.vue";
+import postAPI from "@/services/postAPI";
 
 export default {
   name: "Category",
@@ -80,8 +81,25 @@ export default {
   },
   data() {
     return {
+      categoryCode: this.$route.name,
+      popularList: [],
       itemList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     };
+  },
+  created() {
+    this.getPopularPost();
+  },
+  methods: {
+    getPopularPost() {
+      postAPI
+        .getPopularCategoryPost(this.categoryCode)
+        .then((res) => {
+          this.popularList = res.data.postList;
+        })
+        .catch((err) => {
+          console.error("Load popular post list failed ", err);
+        });
+    },
   }
 };
 </script>
