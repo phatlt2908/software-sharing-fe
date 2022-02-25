@@ -7,7 +7,7 @@ class postAPI {
     // }
 
     getCategoryDetail(categoryCode) {
-        return axios.get(apiConst.CATEGORY_DETAIL, { params: {  categoryCode: categoryCode } });
+        return axios.get(apiConst.CATEGORY_DETAIL, { params: { categoryCode: categoryCode } });
     }
 
     getPostDetail(postCode) {
@@ -16,6 +16,10 @@ class postAPI {
 
     getPopularCategoryPost(categoryCode) {
         return axios.get(apiConst.POPULAR_CATEGORY_POST, { params: { categoryCode: categoryCode } });
+    }
+
+    getNewestCategoryPost(data) {
+        return axios.post(apiConst.NEWEST_CATEGORY_POST, data);
     }
 }
 

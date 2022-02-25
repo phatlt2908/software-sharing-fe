@@ -10,6 +10,7 @@ const apiConst = {
     CATEGORY_DETAIL: "/category/detail",
 
     POPULAR_CATEGORY_POST: "/post/popular-category-post",
+    NEWEST_CATEGORY_POST: "/post/newest-category-post",
 }
 
 export default apiConst

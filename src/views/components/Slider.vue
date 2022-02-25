@@ -5,6 +5,7 @@
         <div
           v-for="slider in sliderList"
           :key="slider"
+          @click="directDetail(slider.code)"
           class="card bd-tw bd-best-item bd-is-large"
         >
           <div v-show="slider.imageUrl" class="card-image">
@@ -38,6 +39,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    directDetail(postCode) {
+      this.$router.push({ name: "postDetail", query: { postCode: postCode } });
+    },
   },
 };
 </script>
