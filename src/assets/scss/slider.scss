@@ -1,8 +1,9 @@
 #slider {
     margin-bottom: 2rem;
+    padding-bottom: 2rem;
 
     .bd-best {
-        height: calc(500px + 3rem);
+        height: calc(450px + 3rem);
         padding: 1.5rem 0;
         overflow: hidden;
         position: relative;
@@ -22,6 +23,7 @@
         top: 1.5rem;
         -webkit-animation-name: bdBestCarousel;
         animation-name: bdBestCarousel;
+        height: 100%;
     }
 
     .bd-best-list:hover {
@@ -34,6 +36,8 @@
         flex-shrink: 0;
         margin-right: 16px;
         width: 300px;
+        height: 92%;
+        overflow: hidden;
         cursor: pointer;
 
         .bd-is-medium {
@@ -47,16 +51,54 @@
         .bd-is-huge {
             font-size: 1.5em;
         }
+
+        .card-image {
+            height: 200px;
+            img {
+                position: absolute;
+                margin: auto;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                vertical-align: middle;
+            }
+        }
+
+        .card-content {
+            .media {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .content {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .time {
+                position: absolute;
+                bottom: 0;
+            }
+        }
     }
 
     @-webkit-keyframes bdBestCarousel {
         100% {
-            transform: translateX(calc(-100% + 3120px));
+            transform: translateX(calc(-100% + 1560px));
         }
     }
     @keyframes bdBestCarousel {
         100% {
-            transform: translateX(calc(-100% + 3120px));
+            transform: translateX(calc(-100% + 1560px));
         }
+    }
+
+    .card {
+        background-color: var(--gray-background);
     }
 }

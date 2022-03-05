@@ -1,16 +1,21 @@
 <template>
   <div id="category">
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Xem nhiều nhất</h1>
-        <h2 class="subtitle">
-          Có thể bạn cũng đang cần những phần mềm dưới đây
-        </h2>
+    <div class="popular-list">
+      <section class="section">
+        <div class="container">
+          <h1 class="title">Xem nhiều nhất</h1>
+          <h2 class="subtitle">
+            Có thể bạn cũng đang cần những phần mềm dưới đây
+          </h2>
+        </div>
+      </section>
+      <Slider v-if="isLoadedPopular" :sliderList="popularList" />
+      <div v-else class="columns is-centered">
+        <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
       </div>
-    </section>
-    <Slider :sliderList="popularList" />
+    </div>
 
-    <section class="section">
+    <section id="list" class="section">
       <div class="container">
         <div class="columns">
           <div class="column is-three-quarters-desktop">
@@ -20,8 +25,8 @@
               role="navigation"
               aria-label="pagination"
             >
-              <a class="pagination-previous">Trước</a>
-              <a class="pagination-next">Trang sau</a>
+              <a v-show="page > 1" class="pagination-previous" @click="changePage(page - 1)">Trước</a>
+              <a v-show="page < totalPage" class="pagination-next" @click="changePage(page + 1)">Trang sau</a>
               <ul class="pagination-list">
                 <li v-if="page >= 3">
                   <a class="pagination-link" @click="changePage(1)">1</a>
@@ -59,7 +64,7 @@
               </ul>
             </nav>
             <hr />
-            <div class="columns is-multiline is-mobile soft-list">
+            <div v-if="isLoadedNewestList" class="columns is-multiline is-mobile soft-list">
               <div
                 v-for="post in newestList"
                 :key="post.id"
@@ -68,17 +73,15 @@
                   is-full-mobile
                   is-full-tablet
                   is-full-desktop
-                  is-half-widescreen
-                  is-half-fullhd
+                  is-full-widescreen
+                  is-full-fullhd
                 "
+                @click="directDetail(post.code)"
               >
                 <div class="card">
                   <div class="columns">
                     <div class="card-image column is-4">
-                      <img
-                        src="https://ecci.com.vn/wp-content/uploads/2021/08/office-professional-plus-2016.jpg"
-                        alt="Placeholder image"
-                      />
+                      <img :src="post.imageUrl" alt="Placeholder image" />
                     </div>
                     <div class="card-content column is-8">
                       <div class="media">
@@ -101,14 +104,17 @@
                 </div>
               </div>
             </div>
+            <div v-else class="columns is-centered">
+              <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
+            </div>
             <hr />
             <nav
               class="pagination is-centered"
               role="navigation"
               aria-label="pagination"
             >
-              <a class="pagination-previous">Trước</a>
-              <a class="pagination-next">Trang sau</a>
+              <a v-show="page > 1" class="pagination-previous" @click="changePage(page - 1)">Trước</a>
+              <a v-show="page < totalPage" class="pagination-next" @click="changePage(page + 1)">Trang sau</a>
               <ul class="pagination-list">
                 <li v-if="page >= 3">
                   <a class="pagination-link" @click="changePage(1)">1</a>
@@ -174,19 +180,23 @@ export default {
       page: 1,
       newestList: [],
       totalPage: 1,
+      isLoadedPopular: false,
+      isLoadedNewestList: false
     };
   },
   created() {
-    this.page = this.$route.query.page || 1;
+    this.page = parseInt(this.$route.query.page) || 1;
     this.getPopularPost();
     this.getNewestPost();
   },
   methods: {
     getPopularPost() {
+      this.isLoadedPopular = false;
       postAPI
         .getPopularCategoryPost(this.categoryCode)
         .then((res) => {
           this.popularList = res.data.postList;
+          this.isLoadedPopular = true;
         })
         .catch((err) => {
           console.error("Load popular post list failed ", err);
@@ -198,12 +208,14 @@ export default {
         itemsPerPage: this.itemsPerPage,
         page: this.page,
       };
+      this.isLoadedNewestList = false;
       postAPI
         .getNewestCategoryPost(request)
         .then((res) => {
           this.newestList = res.data.postList;
           const totalPost = res.data.totalPost;
           this.totalPage = Math.ceil(totalPost / this.itemsPerPage);
+          this.isLoadedNewestList = true;
         })
         .catch((err) => {
           console.error("Load newest post list failed ", err);
@@ -211,14 +223,22 @@ export default {
     },
     changePage(page) {
       this.page = page;
-      this.getNewestPost();
+    },
+    directDetail(postCode) {
+      this.$router.push({ name: "postDetail", query: { postCode: postCode } });
     },
   },
   watch: {
     "$route.name"() {
       this.categoryCode = this.$route.name;
+      this.page = 1;
       this.getPopularPost();
+      this.getNewestPost();
     },
+    page() {
+      this.$router.push({ query: { page: this.page }, hash: '#list' });
+      this.getNewestPost();
+    }
   },
 };
 </script>

@@ -19,7 +19,8 @@
             </div>
             <div class="content">
               {{ slider.description }}
-              <br />
+            </div>
+            <div class="time">
               <time class="has-text-grey" datetime="2016-1-1">{{
                 slider.createdDate
               }}</time>
