@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "HOST='0.0.0.0' npm run serve",
+    "start": "HOST='0.0.0.0' PORT=8080 npm run serve",
     "serve": "vue-cli-service serve --port 8080",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
