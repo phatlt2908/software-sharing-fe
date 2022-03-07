@@ -1,18 +1,18 @@
 <template>
   <div id="hero">
-    <div class="hero is-medium bd-hero" :class="displayInfo.color">
+    <div class="hero is-medium bd-hero" :class="category ? category.color : ''">
       <div class="hero-body">
         <div class="container">
           <div class="bd-hero-body">
             <div class="bd-hero-heading">
               <h1 class="title is-2">
                 <span class="icon">
-                  <font-awesome-icon :icon="displayInfo.icon" />
+                  <font-awesome-icon :icon="category ? category.icon : ''" />
                 </span>
-                <p>{{ displayInfo.title }}</p>
+                <p>{{ category ? category.title : '' }}</p>
               </h1>
               <p class="subtitle is-3 mt-3">
-                {{ displayInfo.subtitle }}
+                {{ category ? category.subtitle : '' }}
               </p>
               <slot></slot>
             </div>
@@ -25,34 +25,12 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
 export default {
   name: "hero",
-  data() {
-    return {
-      displayInfo: {
-        color: "bd-is-game",
-        icon: "gamepad",
-        title: "",
-        subtitle: ""
-      },
-    };
-  },
-  created() {
-    this.updateDisplay();
-  },
-  methods: {
-    updateDisplay() {
-      this.displayInfo["color"] = this.$route.meta.color;
-      this.displayInfo["icon"] = this.$route.meta.icon;
-      this.displayInfo["title"] = this.$route.meta.title;
-      this.displayInfo["subtitle"] = this.$route.meta.subtitle;
-    },
-  },
-  watch: {
-    $route() {
-      this.updateDisplay();
-    },
-  },
+  computed: {
+    ...mapState(["category"])
+  }
 };
 </script>
 

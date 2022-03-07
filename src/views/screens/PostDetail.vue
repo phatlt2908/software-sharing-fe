@@ -24,7 +24,7 @@
             </article>
           </div>
           <div class="column">
-            <Side />
+            <side />
           </div>
         </div>
       </div>
@@ -70,9 +70,21 @@ export default {
   created() {
     this.postCode = this.$route.query.postCode;
     this.loadDetail();
-
-    this.$route.meta.color = "bd-is-link";
-    this.$route.meta.title = "abcd";
+  },
+  mounted() {
+    this.$route.meta.color = "bd-is-tech";
+          this.$route.meta.icon = "drafting-compass";
+          this.$route.meta.title;
+          this.$route.meta.subtitle;
+          this.$forceUpdate();
+    window.setTimeout(() => {
+      postAPI
+        .updateReadNum(this.postCode)
+        .then(() => {})
+        .catch((err) => {
+          console.error("Load post detail failed ", err);
+        });
+    }, 10000);
   },
   methods: {
     loadDetail() {
@@ -82,6 +94,11 @@ export default {
           this.postDetail = res.data.post;
           this.postLinkDownloads = res.data.links;
           this.loaded = true;
+
+          this.$route.meta.color = "bd-is-tech";
+          this.$route.meta.icon = "drafting-compass";
+          this.$route.meta.title;
+          this.$route.meta.subtitle;
         })
         .catch((err) => {
           console.error("Load post detail failed ", err);

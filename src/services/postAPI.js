@@ -21,6 +21,10 @@ class postAPI {
     getNewestCategoryPost(data) {
         return axios.post(apiConst.NEWEST_CATEGORY_POST, data);
     }
+
+    updateReadNum(postCode) {
+        return axios.get(apiConst.UPDATE_READ_NUM, { params: { postCode: postCode } });
+    }
 }
 
 export default new postAPI()

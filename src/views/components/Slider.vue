@@ -20,11 +20,11 @@
             <div class="content">
               {{ slider.description }}
             </div>
-            <div class="time">
-              <time class="has-text-grey" datetime="2016-1-1">{{
-                slider.createdDate
-              }}</time>
-            </div>
+            <post-info 
+              :createdDate="slider.createdDate"
+              :readNum="slider.readNum"
+              :commentNum="slider.commentNum"
+            />
           </div>
         </div>
       </div>
@@ -33,7 +33,9 @@
 </template>
 
 <script>
+import PostInfo from "./PostInfo.vue";
 export default {
+  components: { PostInfo },
   name: "slider",
   props: {
     sliderList: null,

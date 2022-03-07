@@ -53,8 +53,10 @@
         }
 
         .card-image {
-            height: 200px;
+            height: 180px;
             img {
+                height: 100%;
+                width: 100%;
                 position: absolute;
                 margin: auto;
                 top: 0;
@@ -79,10 +81,6 @@
                 -webkit-box-orient: vertical;
                 overflow: hidden;
                 text-overflow: ellipsis;
-            }
-            .time {
-                position: absolute;
-                bottom: 0;
             }
         }
     }

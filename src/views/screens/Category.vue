@@ -83,8 +83,8 @@
                     <div class="card-image column is-4">
                       <img :src="post.imageUrl" alt="Placeholder image" />
                     </div>
-                    <div class="card-content column is-8">
-                      <div class="media">
+                    <div class="card-content column is-8 pr-2">
+                      <div class="media pr-4">
                         <div class="media-content">
                           <p class="title is-4">
                             {{ post.title }}
@@ -92,13 +92,16 @@
                         </div>
                       </div>
 
-                      <div class="content">
+                      <div class="content pr-4">
                         {{ post.description }}
-                        <br />
-                        <time class="has-text-grey" datetime="2016-1-1"
-                          >11:09 PM - 1 Jan 2016</time
-                        >
                       </div>
+
+                      <post-info 
+                        :createdDate="post.createdDate"
+                        :readNum="post.readNum"
+                        :commentNum="post.commentNum"
+                        class="pr-4"
+                      />
                     </div>
                   </div>
                 </div>
@@ -165,12 +168,14 @@
 import Slider from "@/views/components/Slider.vue";
 import Side from "@/views/components/Side.vue";
 import postAPI from "@/services/postAPI";
+import PostInfo from '../components/PostInfo.vue';
 
 export default {
   name: "Category",
   components: {
     Slider,
     Side,
+    PostInfo,
   },
   data() {
     return {
@@ -185,6 +190,7 @@ export default {
     };
   },
   created() {
+    this.$store.dispatch("changeCategory", {categoryCode: this.categoryCode});
     this.page = parseInt(this.$route.query.page) || 1;
     this.getPopularPost();
     this.getNewestPost();
@@ -223,6 +229,13 @@ export default {
     },
     changePage(page) {
       this.page = page;
+      this.$router.push({ query: { page: this.page }, hash: '#list' });
+      this.getNewestPost();
+    },
+    changeCategory() {
+      this.page = 1;
+      this.$router.push({ query: { page: this.page } });
+      this.getNewestPost();
     },
     directDetail(postCode) {
       this.$router.push({ name: "postDetail", query: { postCode: postCode } });
@@ -231,13 +244,11 @@ export default {
   watch: {
     "$route.name"() {
       this.categoryCode = this.$route.name;
-      this.page = 1;
+      this.changeCategory();
       this.getPopularPost();
-      this.getNewestPost();
     },
-    page() {
-      this.$router.push({ query: { page: this.page }, hash: '#list' });
-      this.getNewestPost();
+    categoryCode() {
+      this.$store.dispatch("changeCategory", {categoryCode: this.categoryCode});
     }
   },
 };

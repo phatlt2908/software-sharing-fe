@@ -40,37 +40,37 @@
             </span>
             <span>Trang chủ</span>
           </router-link>
-          <router-link :to="{ name: 'game' }" class="navbar-item">
+          <router-link :to="{ name: 'game', query: {page: 1} }" class="navbar-item">
             <span class="icon has-text-danger">
               <font-awesome-icon icon="gamepad" />
             </span>
             <span>Games</span>
           </router-link>
-          <router-link :to="{ name: 'office' }" class="navbar-item">
+          <router-link :to="{ name: 'office', query: {page: 1} }" class="navbar-item">
             <span class="icon has-text-info">
               <font-awesome-icon icon="print" />
             </span>
             <span>Văn phòng</span>
           </router-link>
-          <router-link :to="{ name: 'graphic' }" class="navbar-item">
+          <router-link :to="{ name: 'graphic', query: {page: 1} }" class="navbar-item">
             <span class="icon has-text-success">
               <font-awesome-icon icon="paint-brush" />
             </span>
             <span>Đồ họa</span>
           </router-link>
-          <router-link :to="{ name: 'technique' }" class="navbar-item">
+          <router-link :to="{ name: 'technique', query: {page: 1} }" class="navbar-item">
             <span class="icon has-text-warning">
               <font-awesome-icon icon="drafting-compass" />
             </span>
             <span>Kỹ thuật</span>
           </router-link>
-          <router-link :to="{ name: 'os' }" class="navbar-item">
+          <router-link :to="{ name: 'os', query: {page: 1} }" class="navbar-item">
             <span class="icon has-text-link">
               <font-awesome-icon :icon="['fab', 'windows']" />
             </span>
             <span>Hệ điều hành</span>
           </router-link>
-          <router-link :to="{ name: 'common' }" class="navbar-item">
+          <router-link :to="{ name: 'common', query: {page: 1} }" class="navbar-item">
             <span class="icon has-text-black">
               <font-awesome-icon icon="file-archive" />
             </span>
