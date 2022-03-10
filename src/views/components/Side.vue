@@ -1,7 +1,7 @@
 <template>
   <div id="side">
     <div class="facebook mb-5">
-      <iframe
+      <iframe v-if="false"
         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmunmeovn&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=190324515024845"
         width="340"
         style="border: none; overflow: hidden"

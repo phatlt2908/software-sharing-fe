@@ -22,32 +22,32 @@ const store = createStore({
             let category;
             switch (data.categoryCode) {
                 case "game":
-                    category = categoryConst.GAME;
+                    category = Object.assign({}, categoryConst.GAME);
                     break;
                 case "office":
-                    category = categoryConst.OFFICE;
+                    category = Object.assign({}, categoryConst.OFFICE);
                     break;
                 case "graphic":
-                    category = categoryConst.GRAPHIC;
+                    category = Object.assign({}, categoryConst.GRAPHIC);
                     break;
                 case "technique":
-                    category = categoryConst.TECHNIQUE;
+                    category = Object.assign({}, categoryConst.TECHNIQUE);
                     break;
                 case "os":
-                    category = categoryConst.OS;
+                    category = Object.assign({}, categoryConst.OS);
                     break;
                 case "common":
-                    category = categoryConst.COMMON;
+                    category = Object.assign({}, categoryConst.COMMON);
                     break;
                 default:
-                    category = categoryConst.COMMON;
+                    category = Object.assign({}, categoryConst.COMMON);
                     break;
             }
 
             if (data.title) {
                 category.title = data.title;
             }
-            if (data.subtitle) {
+            if (data.subtitle != null) {
                 category.subtitle = data.subtitle;
             }
 

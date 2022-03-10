@@ -1,6 +1,6 @@
 <template>
   <div id="postDetail">
-    <section class="section">
+    <section class="section pt-0">
       <div class="container">
         <div class="columns">
           <div class="column is-three-quarters-desktop">
@@ -95,10 +95,13 @@ export default {
           this.postLinkDownloads = res.data.links;
           this.loaded = true;
 
-          this.$route.meta.color = "bd-is-tech";
-          this.$route.meta.icon = "drafting-compass";
-          this.$route.meta.title;
-          this.$route.meta.subtitle;
+          let categoryHeroDisplay = {
+            categoryCode: this.postDetail.categoryCode,
+            title: this.postDetail.title,
+            subtitle: "",
+          }
+
+          this.$store.dispatch("changeCategory", categoryHeroDisplay);
         })
         .catch((err) => {
           console.error("Load post detail failed ", err);
