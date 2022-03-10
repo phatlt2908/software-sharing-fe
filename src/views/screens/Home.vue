@@ -6,13 +6,13 @@
         <div class="columns">
           <div class="column bd-index-content">
             <h1 class="title has-text-black">
-              <strong>Ý! Đây nè!</strong> Nơi chia sẻ <strong>phần mềm</strong>,
+              <strong>Đây nè!</strong> Nơi chia sẻ <strong>phần mềm</strong>,
               <strong>ứng dụng</strong>, <strong>games</strong>...<br />
               Hoàn toàn <strong>miễn phí</strong>
             </h1>
             <div class="content">
               <p>
-                Ý! Đây nè! là miễn phí, <strong>không</strong> dẫn đến các link
+                <strong>Không</strong> dẫn đến các link
                 rác, <strong>không</strong> phải làm các bước phức tạp để tìm
                 mật khẩu file nén
               </p>
