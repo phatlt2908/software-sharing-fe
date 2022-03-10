@@ -111,9 +111,9 @@
         class="bd-search"
         :class="{ 'is-active': isActiveMobile }"
       >
-        <p class="control has-icons-left">
+        <p class="control bd-search_box has-icons-left">
           <span
-            style="position: relative; display: inline-block; direction: ltr"
+            class="bd-search_box_input"
           >
             <input
               id="algoliaSearch"

@@ -43,14 +43,25 @@
     }
 
     .bd-search {
-        @media screen and (min-width: 1408px) {
-            width: 16rem;
-        }
-
         @media screen and (min-width: 1024px) {
             align-items: center;
             display: flex;
             width: 16rem;
+        }
+
+        @media screen and (min-width: 1408px) {
+            width: 20rem;
+        }
+
+        .bd-search_box {
+            width: 100%;
+
+            .bd-search_box_input {
+                position: relative;
+                display: inline-block;
+                direction: ltr;
+                width: 100%;
+            }
         }
     }
 
