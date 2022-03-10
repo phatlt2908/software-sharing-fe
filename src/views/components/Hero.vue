@@ -9,10 +9,10 @@
                 <span class="icon">
                   <font-awesome-icon :icon="category ? category.icon : ''" />
                 </span>
-                <p>{{ category ? category.title : '' }}</p>
+                <p v-if="category && category.title">{{ category.title }}</p>
               </h1>
-              <p class="subtitle is-3 mt-3">
-                {{ category ? category.subtitle : '' }}
+              <p v-if="category && category.subtitle" class="subtitle is-3 mt-3">
+                {{ category.subtitle }}
               </p>
               <slot></slot>
             </div>

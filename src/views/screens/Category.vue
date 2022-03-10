@@ -169,6 +169,7 @@ import Slider from "@/views/components/Slider.vue";
 import Side from "@/views/components/Side.vue";
 import postAPI from "@/services/postAPI";
 import PostInfo from '../components/PostInfo.vue';
+import categoryConst from '@/constants/categoryConst';
 
 export default {
   name: "Category",
@@ -240,12 +241,22 @@ export default {
     directDetail(postCode) {
       this.$router.push({ name: "postDetail", query: { postCode: postCode } });
     },
+    isCorrectCategory(categoryCode) {
+      return categoryCode == categoryConst.GAME.categoryCode ||
+          categoryCode == categoryConst.OFFICE.categoryCode ||
+          categoryCode == categoryConst.GRAPHIC.categoryCode ||
+          categoryCode == categoryConst.TECHNIQUE.categoryCode ||
+          categoryCode == categoryConst.OS.categoryCode ||
+          categoryCode == categoryConst.COMMON.categoryCode;
+    }
   },
   watch: {
     "$route.name"() {
-      this.categoryCode = this.$route.name;
-      this.changeCategory();
-      this.getPopularPost();
+      if (this.isCorrectCategory(this.$route.name)) {
+        this.categoryCode = this.$route.name;
+        this.changeCategory();
+        this.getPopularPost();
+      }
     },
     categoryCode() {
       this.$store.dispatch("changeCategory", {categoryCode: this.categoryCode});
