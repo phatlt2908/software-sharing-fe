@@ -17,6 +17,7 @@
     "bulma": "^0.9.3",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
+    "vue-gtag": "^2.0.1",
     "vue-router": "^4.0.12",
     "vue-sweetalert2": "^5.0.2",
     "vuex": "^4.0.2",
