@@ -31,6 +31,7 @@ const routes = [
         component: () => import('@/views/screens/Category'),
         name: 'game',
         meta: {
+          title: 'Game',
           active: 'game',
           breadcrumb: [screenConst.HOME, screenConst.GAME]
         }
@@ -40,6 +41,7 @@ const routes = [
         component: () => import('@/views/screens/Category'),
         name: 'office',
         meta: {
+          title: 'Phần mềm văn phòng',
           active: 'office',
           breadcrumb: [screenConst.HOME, screenConst.OFFICE]
         }
@@ -49,6 +51,7 @@ const routes = [
         component: () => import('@/views/screens/Category'),
         name: 'graphic',
         meta: {
+          title: 'Phần mềm đồ họa',
           active: 'graphic',
           breadcrumb: [screenConst.HOME, screenConst.GRAPHIC]
         }
@@ -58,6 +61,7 @@ const routes = [
         component: () => import('@/views/screens/Category'),
         name: 'technique',
         meta: {
+          title: 'Phần mềm kỹ thuật',
           active: 'technique',
           breadcrumb: [screenConst.HOME, screenConst.TECHNIQUE]
         }
@@ -67,6 +71,7 @@ const routes = [
         component: () => import('@/views/screens/Category'),
         name: 'os',
         meta: {
+          title: 'Hệ điều hành',
           active: 'os',
           breadcrumb: [screenConst.HOME, screenConst.OS]
         }
@@ -76,6 +81,7 @@ const routes = [
         component: () => import('@/views/screens/Category'),
         name: 'common',
         meta: {
+          title: 'Ai cũng cần và thủ thuật',
           active: 'common',
           breadcrumb: [screenConst.HOME, screenConst.COMMON]
         }
@@ -119,7 +125,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title ? to.meta.title + ' | Đây nè' : 'Đây nè | Software'
+  document.title = to.meta.title ? 'Đây nè | ' + to.meta.title : 'Đây nè | Chia sẻ phần mềm'
   next()
 })
 
