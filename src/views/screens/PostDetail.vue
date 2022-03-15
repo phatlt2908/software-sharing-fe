@@ -72,11 +72,6 @@ export default {
     this.loadDetail();
   },
   mounted() {
-    this.$route.meta.color = "bd-is-tech";
-          this.$route.meta.icon = "drafting-compass";
-          this.$route.meta.title;
-          this.$route.meta.subtitle;
-          this.$forceUpdate();
     window.setTimeout(() => {
       postAPI
         .updateReadNum(this.postCode)
@@ -93,6 +88,7 @@ export default {
         .then((res) => {
           this.postDetail = res.data.post;
           this.postLinkDownloads = res.data.links;
+          window.document.title = "Đây nè | " + this.postDetail.name;
           this.loaded = true;
 
           let categoryHeroDisplay = {
