@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import VueGtag from "vue-gtag";
+import { createMetaManager } from 'vue-meta';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueSweetalert2 from 'vue-sweetalert2';
@@ -19,6 +20,7 @@ vueApp.use(store);
 vueApp.use(VueGtag, {
     config: { id: "G-K099QQT9WT" }
 });
+vueApp.use(createMetaManager());
 vueApp.component("font-awesome-icon", FontAwesomeIcon);
 
 vueApp.mount('#app');
