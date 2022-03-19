@@ -1,9 +1,10 @@
 <template>
   <div id="side">
     <div class="facebook mb-5">
-      <iframe v-if="false"
-        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmunmeovn&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=190324515024845"
+      <iframe
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdayne.run&tabs=timeline&width=340&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=190324515024845"
         width="340"
+        height="400"
         style="border: none; overflow: hidden"
         scrolling="no"
         frameborder="0"
@@ -17,34 +18,27 @@
       <h2 class="title is-4">Thẻ</h2>
       <span
         v-for="tag in tagList"
-        :key="tag"
+        :key="tag.value"
         class="tag is-light is-primary mr-1 mb-1"
         :class="getTagDisplay()"
-        >{{ tag }}</span
+        >{{ tag.value }}</span
       >
     </div>
-		<div class="ads-component-side">
-      ADs
-    </div>
+    <div class="ads-component-side">ADs</div>
   </div>
 </template>
 
 <script>
+import postAPI from "@/services/postAPI";
 export default {
   name: "side",
   data() {
     return {
-      tagList: [
-        "office",
-        "forza horizon",
-        "game",
-        "autocad",
-        "3ds max",
-        "winrar",
-        "photoshop",
-        "lightroom",
-      ],
+      tagList: [],
     };
+  },
+  created() {
+    this.getTagList();
   },
   methods: {
     getTagDisplay() {
@@ -59,6 +53,16 @@ export default {
         default:
           break;
       }
+    },
+    getTagList() {
+      postAPI
+        .getTagList()
+        .then((res) => {
+          this.tagList = res.data;
+        })
+        .catch((err) => {
+          console.error("Get tag list failed ", err);
+        });
     },
   },
 };
