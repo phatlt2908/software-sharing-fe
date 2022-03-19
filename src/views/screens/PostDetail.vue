@@ -93,21 +93,22 @@ export default {
 
           let categoryHeroDisplay = {
             categoryCode: this.postDetail.categoryCode,
-            title: this.postDetail.title,
-            subtitle: "",
+            title: this.postDetail.name,
+            subtitle: this.postDetail.title,
           }
 
           this.$store.dispatch("changeCategory", categoryHeroDisplay);
         })
         .catch((err) => {
           console.error("Load post detail failed ", err);
-          this.$swal({
-            icon: "error",
-            title: "Không load được nội dung bài post :(",
-            timer: 3000,
-            showConfirmButton: true,
-            type: "error",
-          });
+          // this.$swal({
+          //   icon: "error",
+          //   title: "Không load được nội dung bài post :(",
+          //   timer: 3000,
+          //   showConfirmButton: true,
+          //   type: "error",
+          // });
+          this.$router.push({ name: "404" });
         });
     },
     directToDownload(link) {
