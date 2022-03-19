@@ -32,6 +32,11 @@ const screen = {
         path: "detail",
         name: "Bài viết"
     },
+    NOT_FOUND: {
+        path: "/404",
+        name: "404 Not found"
+    },
+
 
     ADMIN: {
         path: "admin",

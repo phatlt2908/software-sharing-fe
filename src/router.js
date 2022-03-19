@@ -23,6 +23,14 @@ const routes = [
     }
   },
   {
+    path: screenConst.NOT_FOUND.path,
+    component: () => import('@/views/screens/404'),
+    name: '404',
+    meta: {
+      title: 'Not found'
+    }
+  },
+  {
     path: '/',
     component: MainLayout,
     children: [

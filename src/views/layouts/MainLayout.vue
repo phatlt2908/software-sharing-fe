@@ -4,7 +4,7 @@
     <Hero />
     <section class="section">
       <div class="container">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <nav v-if="breadcrumbs && breadcrumbs.length" class="breadcrumb" aria-label="breadcrumbs">
           <ul>
             <li
               v-for="(breadcrumb, index) in breadcrumbs"
@@ -31,7 +31,6 @@ export default {
   name: "MainLayout",
   data() {
     return {
-      image: "https://i.imgur.com/9RHhWEo.jpeg",
     };
   },
   components: {
