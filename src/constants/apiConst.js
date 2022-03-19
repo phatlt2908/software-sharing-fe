@@ -12,7 +12,11 @@ const apiConst = {
     POPULAR_CATEGORY_POST: "/post/popular-category-post",
     NEWEST_CATEGORY_POST: "/post/newest-category-post",
 
-    UPDATE_READ_NUM: "/post/update-read-num"
+    UPDATE_READ_NUM: "/post/update-read-num",
+
+    SEARCH_POST: "/post/search-post",
+
+    GET_TAG_LIST: "/tag/list",
 }
 
 export default apiConst

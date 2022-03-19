@@ -63,6 +63,17 @@
                 width: 100%;
             }
         }
+
+        .search-button {
+            margin-left: -58px;
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            .is-rounded {
+                border-radius: 9999px;
+            }
+        }
     }
 
     .input {
@@ -71,5 +82,37 @@
     }
     .input:focus {
         background-color: white;
+    }
+
+    h3 {
+        margin: 40px 0 0;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    // li {
+    //     display: inline-block;
+    //     margin: 0 10px;
+    // }
+
+    .modal-search {
+        @media screen and (min-width: 769px) {
+            .modal-card,
+            .modal-content {
+                margin: 0 auto;
+                max-height: calc(100vh - 40px);
+                width: 100%;
+                max-width: 900px;
+            }
+        }
+        .modal-card-body {
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            
+            .tag {
+                cursor: pointer;
+            }
+        }
     }
 }

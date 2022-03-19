@@ -95,7 +95,7 @@ export default {
             categoryCode: this.postDetail.categoryCode,
             title: this.postDetail.name,
             subtitle: this.postDetail.title,
-          }
+          };
 
           this.$store.dispatch("changeCategory", categoryHeroDisplay);
         })
@@ -113,6 +113,14 @@ export default {
     },
     directToDownload(link) {
       window.open(link.url, "_blank");
+    },
+  },
+  watch: {
+    "$route.query.postCode"() {
+      if (this.$route.query.postCode) {
+        this.postCode = this.$route.query.postCode;
+        this.loadDetail();
+      }
     },
   },
 };

@@ -25,6 +25,14 @@ class postAPI {
     updateReadNum(postCode) {
         return axios.get(apiConst.UPDATE_READ_NUM, { params: { postCode: postCode } });
     }
+
+    searchPost(data) {
+        return axios.post(apiConst.SEARCH_POST, data);
+    }
+
+    getTagList() {
+        return axios.get(apiConst.GET_TAG_LIST);
+    }
 }
 
 export default new postAPI()
