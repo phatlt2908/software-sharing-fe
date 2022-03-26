@@ -201,14 +201,19 @@
               @changePage="changePage"
               @directDetail="displaySearch"
             />
-            <span
-              v-else
-              v-for="tag in tagList"
-              :key="tag.value"
-              class="tag is-light is-primary mr-1 mb-1"
-              :class="getTagDisplay()"
-              >{{ tag.value }}</span
-            >
+            <div v-else>
+              <div v-if="oldKeyword" class="mb-3">
+                Không có kết quả search cho từ khóa "{{ oldKeyword }}"
+              </div>
+              <span
+                @click="this.keyword = tag.value; search()"
+                v-for="tag in tagList"
+                :key="tag.value"
+                class="tag is-light is-primary mr-1 mb-1"
+                :class="getTagDisplay()"
+                >{{ tag.value }}</span
+              >
+            </div>
           </div>
         </section>
       </div>
@@ -230,6 +235,7 @@ export default {
       isActiveMobile: false,
       isDisplaySearch: false,
       keyword: "",
+      oldKeyword: "",
       pagination: {
         itemsPerPage: 10,
         page: 1,
@@ -248,6 +254,7 @@ export default {
       this.isActiveMobile = !this.isActiveMobile;
     },
     search() {
+      this.oldKeyword = this.keyword;
       let request = {
         keyword: this.keyword,
         itemsPerPage: this.pagination.itemsPerPage,

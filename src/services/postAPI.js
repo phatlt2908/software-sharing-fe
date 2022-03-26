@@ -22,6 +22,10 @@ class postAPI {
         return axios.post(apiConst.NEWEST_CATEGORY_POST, data);
     }
 
+    getRelationCategoryPost(categoryCode, postCode) {
+        return axios.get(apiConst.RELATION_CATEGORY_POST, { params: { categoryCode: categoryCode, postCode: postCode } });
+    }
+
     updateReadNum(postCode) {
         return axios.get(apiConst.UPDATE_READ_NUM, { params: { postCode: postCode } });
     }

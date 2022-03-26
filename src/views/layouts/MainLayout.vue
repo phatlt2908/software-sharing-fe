@@ -26,6 +26,7 @@
 <script>
 import Top from "@/views/components/Top.vue";
 import Hero from "@/views/components/Hero.vue";
+import { mapState } from "vuex"
 
 export default {
   name: "MainLayout",
@@ -38,9 +39,7 @@ export default {
     Hero
   },
   computed: {
-    breadcrumbs: function () {
-      return this.$route.meta.breadcrumb;
-    },
+    ...mapState(["breadcrumbs"])
   },
 };
 </script>
