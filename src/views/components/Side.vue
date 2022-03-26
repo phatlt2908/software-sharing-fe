@@ -15,21 +15,17 @@
       ></iframe>
     </div>
     <div class="tag-list mb-5">
-      <h2 class="title is-4">Thẻ</h2>
-      <span
-        v-for="tag in tagList"
-        :key="tag.value"
-        class="tag is-light is-primary mr-1 mb-1"
-        :class="getTagDisplay()"
-        >{{ tag.value }}</span
-      >
+      <h2 class="title is-4">Phổ biến</h2>
+    </div>
+    <div class="tag-list mb-5">
+      <h2 class="title is-4">Gần đây</h2>
     </div>
     <div class="ads-component-side">ADs</div>
   </div>
 </template>
 
 <script>
-import postAPI from "@/services/postAPI";
+// import postAPI from "@/services/postAPI";
 export default {
   name: "side",
   data() {
@@ -38,32 +34,8 @@ export default {
     };
   },
   created() {
-    this.getTagList();
   },
   methods: {
-    getTagDisplay() {
-      let ranSize = Math.floor(Math.random() * 3);
-      switch (ranSize) {
-        case 0:
-          return "is-large";
-        case 1:
-          return "is-medium";
-        case 2:
-          return "is-normal";
-        default:
-          break;
-      }
-    },
-    getTagList() {
-      postAPI
-        .getTagList()
-        .then((res) => {
-          this.tagList = res.data;
-        })
-        .catch((err) => {
-          console.error("Get tag list failed ", err);
-        });
-    },
   },
 };
 </script>

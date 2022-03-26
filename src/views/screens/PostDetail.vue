@@ -13,7 +13,7 @@
                   v-for="link in postLinkDownloads"
                   :key="link.id"
                   @click="directToDownload(link)"
-                  class="button is-primary is-medium"
+                  class="button is-primary is-medium mr-2"
                 >
                   <span class="icon is-medium">
                     <font-awesome-icon icon="download" />
@@ -27,18 +27,21 @@
             <side />
           </div>
         </div>
+        <hr />
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Xem nhiều nhất</h1>
-        <h2 class="subtitle">
-          Có thể bạn cũng đang cần những phần mềm dưới đây
-        </h2>
+    <div class="container">
+      <div class="mt-5">
+        <div class="container">
+          <h1 class="title">Liên quan</h1>
+        </div>
+        <Slider v-if="isLoadedRelation" :sliderList="relationPostList" />
+        <div v-else class="columns is-centered">
+          <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
+        </div>
       </div>
-    </section>
-    <Slider />
+    </div>
 
     <a href="#link" class="button is-rounded is-primary is-medium">
       <span class="icon">
@@ -65,6 +68,8 @@ export default {
       postCode: null,
       postDetail: null,
       postLinkDownloads: null,
+      relationPostList: null,
+      isLoadedRelation: false,
     };
   },
   created() {
@@ -91,13 +96,27 @@ export default {
           window.document.title = "Đây nè | " + this.postDetail.name;
           this.loaded = true;
 
-          let categoryHeroDisplay = {
+          let heroDisplay = {
             categoryCode: this.postDetail.categoryCode,
             title: this.postDetail.name,
             subtitle: this.postDetail.title,
+            subBread: this.postDetail.name,
           };
 
-          this.$store.dispatch("changeCategory", categoryHeroDisplay);
+          this.$store.dispatch("changeCategory", heroDisplay);
+
+          postAPI
+            .getRelationCategoryPost(
+              this.postDetail.categoryCode,
+              this.postCode
+            )
+            .then((res) => {
+              this.relationPostList = res.data.postList;
+              this.isLoadedRelation = true;
+            })
+            .catch((err) => {
+              console.error("Load popular post list failed ", err);
+            });
         })
         .catch((err) => {
           console.error("Load post detail failed ", err);

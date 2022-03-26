@@ -11,6 +11,7 @@ const apiConst = {
 
     POPULAR_CATEGORY_POST: "/post/popular-category-post",
     NEWEST_CATEGORY_POST: "/post/newest-category-post",
+    RELATION_CATEGORY_POST: "/post/relation-category-post",
 
     UPDATE_READ_NUM: "/post/update-read-num",
 

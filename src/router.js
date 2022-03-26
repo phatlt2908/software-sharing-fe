@@ -41,7 +41,7 @@ const routes = [
         meta: {
           title: 'Game',
           active: 'game',
-          breadcrumb: [screenConst.HOME, screenConst.GAME]
+          // breadcrumb: [screenConst.HOME, screenConst.GAME]
         }
       },
       {
@@ -51,7 +51,7 @@ const routes = [
         meta: {
           title: 'Phần mềm văn phòng',
           active: 'office',
-          breadcrumb: [screenConst.HOME, screenConst.OFFICE]
+          // breadcrumb: [screenConst.HOME, screenConst.OFFICE]
         }
       },
       {
@@ -61,7 +61,7 @@ const routes = [
         meta: {
           title: 'Phần mềm đồ họa',
           active: 'graphic',
-          breadcrumb: [screenConst.HOME, screenConst.GRAPHIC]
+          // breadcrumb: [screenConst.HOME, screenConst.GRAPHIC]
         }
       },
       {
@@ -71,7 +71,7 @@ const routes = [
         meta: {
           title: 'Phần mềm kỹ thuật',
           active: 'technique',
-          breadcrumb: [screenConst.HOME, screenConst.TECHNIQUE]
+          // breadcrumb: [screenConst.HOME, screenConst.TECHNIQUE]
         }
       },
       {
@@ -81,7 +81,7 @@ const routes = [
         meta: {
           title: 'Hệ điều hành',
           active: 'os',
-          breadcrumb: [screenConst.HOME, screenConst.OS]
+          // breadcrumb: [screenConst.HOME, screenConst.OS]
         }
       },
       {
@@ -91,7 +91,7 @@ const routes = [
         meta: {
           title: 'Ai cũng cần và thủ thuật',
           active: 'common',
-          breadcrumb: [screenConst.HOME, screenConst.COMMON]
+          // breadcrumb: [screenConst.HOME, screenConst.COMMON]
         }
       },
       {
@@ -105,7 +105,7 @@ const routes = [
           color: "bd-is-black",
           icon: "download",
           active: 'common',
-          breadcrumb: [screenConst.HOME, screenConst.COMMON]
+          breadcrumb: [screenConst.HOME]
         }
       },
     ]
