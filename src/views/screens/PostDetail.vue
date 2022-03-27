@@ -9,7 +9,7 @@
               <div class="content" v-html="postDetail.content"></div>
               <!-- Link download -->
               <div class="mt-5" v-for="group in postLinkDownloads" :key="group.name">
-                <h5 v-if="group.name" class="title is-5">{{ group.name }}:</h5>
+                <h5 v-if="group.name && group.name != 'null'" class="title is-5">{{ group.name }}:</h5>
                 <div id="link">
                   <button
                     v-for="link in group.links"
