@@ -8,18 +8,21 @@
               <div class="content" v-html="postDetail.description"></div>
               <div class="content" v-html="postDetail.content"></div>
               <!-- Link download -->
-              <div id="link">
-                <button
-                  v-for="link in postLinkDownloads"
-                  :key="link.id"
-                  @click="directToDownload(link)"
-                  class="button is-primary is-medium mr-2"
-                >
-                  <span class="icon is-medium">
-                    <font-awesome-icon icon="download" />
-                  </span>
-                  <span>{{ link.typeName }}</span>
-                </button>
+              <div class="mt-5" v-for="group in postLinkDownloads" :key="group.name">
+                <h5 class="title is-5">{{ group.name }}:</h5>
+                <div id="link">
+                  <button
+                    v-for="link in group.links"
+                    :key="link.id"
+                    @click="directToDownload(link)"
+                    class="button is-primary is-medium mr-2"
+                  >
+                    <span class="icon is-medium">
+                      <font-awesome-icon icon="download" />
+                    </span>
+                    <span>{{ link.typeName }}</span>
+                  </button>
+                </div>
               </div>
             </article>
           </div>
@@ -92,7 +95,7 @@ export default {
         .getPostDetail(this.postCode)
         .then((res) => {
           this.postDetail = res.data.post;
-          this.postLinkDownloads = res.data.links;
+          this.postLinkDownloads = this.groupLinkDownload(res.data.links);
           window.document.title = "Đây nè | " + this.postDetail.name;
           this.loaded = true;
 
@@ -129,6 +132,24 @@ export default {
           // });
           this.$router.push({ name: "404" });
         });
+    },
+    groupLinkDownload(myArray) {
+      var groupToValues = myArray.reduce(function (obj, item) {
+        obj[item.name] = obj[item.name] || [];
+        obj[item.name].push({
+          id: item.id,
+          typeCode: item.typeCode,
+          typeName: item.typeName,
+          url: item.url,
+        });
+        return obj;
+      }, {});
+
+      var groups = Object.keys(groupToValues).map(function (key) {
+        return { name: key, links: groupToValues[key] };
+      });
+
+      return groups;
     },
     directToDownload(link) {
       window.open(link.url, "_blank");
