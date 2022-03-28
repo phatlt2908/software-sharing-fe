@@ -1,10 +1,12 @@
 #side {
     height: 100%;
 
-    .tag-list {
-        .tag {
-            cursor: pointer;
-        }
+    .side-popular-list {
+        margin-bottom: 5rem;
+    }
+
+    .side-newest-list {
+        margin-bottom: 5rem;
     }
 
     .ads-component-side {

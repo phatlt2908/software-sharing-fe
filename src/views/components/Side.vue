@@ -14,28 +14,61 @@
         data-show-facepile="false"
       ></iframe>
     </div>
-    <div class="tag-list mb-5">
+    <div class="side-popular-list">
       <h2 class="title is-4">Phổ biến</h2>
+      <side-list :list="popularList" :isLoaded="isLoadedPopular" />
     </div>
-    <div class="tag-list mb-5">
+    <div class="side-newest-list">
       <h2 class="title is-4">Gần đây</h2>
+      <side-list :list="newestList" :isLoaded="isLoadedNewest" />
     </div>
-    <div class="ads-component-side">ADs</div>
+    <div v-if="false" class="ads-component-side">ADs</div>
   </div>
 </template>
 
 <script>
-// import postAPI from "@/services/postAPI";
+import postAPI from "@/services/postAPI";
+import SideList from "@/views/components/SideList.vue";
 export default {
   name: "side",
+  components: {
+    SideList
+  },
   data() {
     return {
-      tagList: [],
+      popularList: null,
+      isLoadedPopular: false,
+      newestList: null,
+      isLoadedNewest: false,
     };
   },
   created() {
+    this.getPopularList();
+    this.getNewestList();
   },
   methods: {
+    getPopularList() {
+      postAPI
+        .getPopularPost()
+        .then((res) => {
+          this.popularList = res.data.postList;
+          this.isLoadedPopular = true;
+        })
+        .catch((err) => {
+          console.error("Load popular post list failed ", err);
+        });
+    },
+    getNewestList() {
+      postAPI
+        .getNewestPost()
+        .then((res) => {
+          this.newestList = res.data.postList;
+          this.isLoadedNewest = true;
+        })
+        .catch((err) => {
+          console.error("Load newest post list failed ", err);
+        });
+    },
   },
 };
 </script>
