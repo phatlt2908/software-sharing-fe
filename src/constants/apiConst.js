@@ -18,6 +18,9 @@ const apiConst = {
     SEARCH_POST: "/post/search-post",
 
     GET_TAG_LIST: "/tag/list",
+
+    POPULAR_POST: "/post/popular-post",
+    NEWEST_POST: "/post/newest-post",
 }
 
 export default apiConst

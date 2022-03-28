@@ -37,6 +37,14 @@ class postAPI {
     getTagList() {
         return axios.get(apiConst.GET_TAG_LIST);
     }
+
+    getPopularPost() {
+        return axios.get(apiConst.POPULAR_POST);
+    }
+
+    getNewestPost() {
+        return axios.get(apiConst.NEWEST_POST);
+    }
 }
 
 export default new postAPI()
