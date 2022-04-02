@@ -573,6 +573,11 @@ export default {
       this.isSelectingAvatar = false
     },
   },
+  watch: {
+    postCode() {
+      this.loadComment(null);
+    }
+  }
 };
 </script>
 
