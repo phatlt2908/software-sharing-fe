@@ -10,7 +10,12 @@ const store = createStore({
     })],
     state: {
         category: null,
-        breadcrumbs: null
+        breadcrumbs: null,
+        commentUser: {
+            username: null,
+            email: null,
+            avatar: null
+        }
     },
     getters: {
     },
@@ -20,6 +25,13 @@ const store = createStore({
         },
         updateBreadcrumInfo(state, breadcrumbs) {
             state.breadcrumbs = breadcrumbs;
+        },
+        updateUser(state, user) {
+            state.commentUser = {
+                username: user.username,
+                email: user.email,
+                avatar: user.avatar
+            }
         }
     },
     actions: {
@@ -73,6 +85,9 @@ const store = createStore({
 
             commit('updateCategoryInfo', category);
             commit('updateBreadcrumInfo', breadcrumbs);
+        },
+        changeUser({ commit }, data) {
+            commit('updateUser', data);
         }
     },
     modules: {

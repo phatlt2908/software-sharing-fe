@@ -45,6 +45,26 @@ class postAPI {
     getNewestPost() {
         return axios.get(apiConst.NEWEST_POST);
     }
+
+    submitComment(data) {
+        return axios.post(apiConst.SUBMIT_COMMENT, data);
+    }
+
+    loadComment(postCode, parentId, email) {
+        return axios.get(apiConst.LOAD_COMMENT, { params: { postCode: postCode, parentId: parentId, email: email } });
+    }
+
+    deleteComment(commentId, email) {
+        return axios.get(apiConst.DELETE_COMMENT, { params: { commentId: commentId, email: email } });
+    }
+
+    updateComment(data) {
+        return axios.post(apiConst.UPDATE_COMMENT, data);
+    }
+
+    updateCommentLike(id, isIncrease) {
+        return axios.get(apiConst.UPDATE_COMMENT_LIKE, { params: { id: id, isIncrease: isIncrease } });
+    }
 }
 
 export default new postAPI()

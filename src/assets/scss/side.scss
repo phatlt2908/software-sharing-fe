@@ -1,12 +1,18 @@
 #side {
     height: 100%;
 
+    .facebook {
+        margin-bottom: 5rem;
+    }
+
     .side-popular-list {
         margin-bottom: 5rem;
     }
 
     .side-newest-list {
         margin-bottom: 5rem;
+        top: 10px;
+        position: sticky;
     }
 
     .ads-component-side {

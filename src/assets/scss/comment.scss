@@ -1,0 +1,69 @@
+#comment {
+    .slide-fade-enter-active {
+        transition: all 0.3s ease-out;
+    }
+
+    .slide-fade-leave-active {
+        transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+    }
+
+    .slide-fade-enter-from,
+    .slide-fade-leave-to {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    .media-content {
+        .content {
+            margin-bottom: 0.5rem;
+
+            .content-gray-backgroud {
+                background-color: var(--gray-background);
+                display: inline-block;
+                padding: 2px 10px;
+                border-radius: 8px;
+            }
+
+            .content-replying-backgroud {
+                background-color: var(--dark-background);
+            }
+        }
+    }
+
+    .sticky-comment {
+        top: 10px;
+        position: sticky;
+        z-index: 9;
+    }
+
+    .comment-input {
+        background-color: var(--gray-background);
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    button.is-so-small {
+        height: 25px;
+    }
+
+    .tag.is-so-small {
+        height: 20px;
+    }
+
+    article {
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .modal-card-body {
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .avatar-select {
+        display: inline-block;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
