@@ -8,22 +8,45 @@
               <div class="content" v-html="postDetail.description"></div>
               <div class="content" v-html="postDetail.content"></div>
               <!-- Link download -->
-              <div class="mt-5" v-for="group in postLinkDownloads" :key="group.name">
-                <h5 v-if="group.name && group.name != 'null'" class="title is-5">{{ group.name }}:</h5>
+              <div
+                class="mt-5 mb-5"
+                v-for="group in postLinkDownloads"
+                :key="group.name"
+              >
+                <h5
+                  v-if="group.name && group.name != 'null'"
+                  class="title is-5"
+                >
+                  {{ group.name }}:
+                </h5>
                 <div id="link">
-                  <button
+                  <a
+                    class="button is-primary is-large mr-2"
                     v-for="link in group.links"
                     :key="link.id"
-                    @click="directToDownload(link)"
-                    class="button is-primary is-medium mr-2"
+                    target="_blank"
+                    :href="link.url"
                   >
                     <span class="icon is-medium">
                       <font-awesome-icon icon="download" />
                     </span>
                     <span>{{ link.typeName }}</span>
-                  </button>
+                  </a>
                 </div>
               </div>
+              <article class="message is-success">
+                <div class="message-body">
+                  Nếu có khó khăn, vấn đề về link download hoặc gặp lỗi trong
+                  quá trình cài đặt, bạn đừng ngần ngại để lại
+                  <strong>bình luận</strong> hoặc <strong>phản hồi</strong> bên
+                  dưới. Chúng mình sẽ trợ giúp nhanh nhất có thể nhé!<br />
+                  Hy vọng những bài viết trên trang DayNe.run sẽ hữu ích đối với
+                  bạn. Nếu có thiếu xót, rất mong góp ý từ mọi người!<br />
+                  <em>Cảm ơn đã ghé vào DayNe.run ^^!</em>
+                </div>
+              </article>
+              <hr />
+              <comment :postCode="postCode" />
             </article>
           </div>
           <div class="column">
@@ -57,6 +80,7 @@
 <script>
 import Slider from "@/views/components/Slider.vue";
 import Side from "@/views/components/Side.vue";
+import Comment from "@/views/components/Comment.vue";
 import postAPI from "@/services/postAPI";
 
 export default {
@@ -64,6 +88,7 @@ export default {
   components: {
     Slider,
     Side,
+    Comment,
   },
   data() {
     return {
@@ -80,14 +105,7 @@ export default {
     this.loadDetail();
   },
   mounted() {
-    window.setTimeout(() => {
-      postAPI
-        .updateReadNum(this.postCode)
-        .then(() => {})
-        .catch((err) => {
-          console.error("Load post detail failed ", err);
-        });
-    }, 10000);
+    this.increaseReadNum();
   },
   methods: {
     loadDetail() {
@@ -151,8 +169,15 @@ export default {
 
       return groups;
     },
-    directToDownload(link) {
-      window.open(link.url, "_blank");
+    increaseReadNum() {
+      window.setTimeout(() => {
+        postAPI
+          .updateReadNum(this.postCode)
+          .then(() => {})
+          .catch((err) => {
+            console.error("Load post detail failed ", err);
+          });
+      }, 10000);
     },
   },
   watch: {
@@ -160,6 +185,7 @@ export default {
       if (this.$route.query.postCode) {
         this.postCode = this.$route.query.postCode;
         this.loadDetail();
+        this.increaseReadNum();
       }
     },
   },

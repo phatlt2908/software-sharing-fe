@@ -116,6 +116,7 @@
     --container-width-widescreen: 1152px;
     --container-width-fullhd: 1344px;
     --gray-background: #fafafa;
+    --dark-background: #ddddddb0;
 }
 
 html {
@@ -151,4 +152,8 @@ html {
         box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
         transform: translateY(-0.5em);
     }
+}
+
+.disable-select {
+    user-select: none;
 }
