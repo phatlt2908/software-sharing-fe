@@ -65,6 +65,7 @@
             <textarea
               v-model="comment"
               class="textarea"
+              :class="{ 'is-danger': !isValidComment }"
               placeholder="Bình luận..."
               ref="commentInput"
             ></textarea>
@@ -348,6 +349,7 @@ export default {
   data() {
     return {
       comment: null,
+      isValidComment: true,
       username: null,
       avatar: null,
       isValidUserName: true,
@@ -400,7 +402,8 @@ export default {
     submit() {
       this.checkValidUserName();
       this.checkValidEmail();
-      if (this.isValidUserName && this.isValidEmail) {
+      this.checkValidComment();
+      if (this.isValidUserName && this.isValidEmail && this.isValidComment) {
         this.isSubmitting = true;
         let data = {
           postCode: this.postCode,
@@ -429,7 +432,8 @@ export default {
     edit() {
       this.checkValidUserName();
       this.checkValidEmail();
-      if (this.isValidUserName && this.isValidEmail) {
+      this.checkValidComment();
+      if (this.isValidUserName && this.isValidEmail && this.isValidComment) {
         this.isSubmitting = true;
         let data = {
           id: this.commentEditting.id,
@@ -449,6 +453,9 @@ export default {
             console.error("Submit comment failed ", err);
           });
       }
+    },
+    checkValidComment() {
+      this.isValidComment = !!this.comment;
     },
     checkValidUserName() {
       this.isValidUserName = !!this.username;
