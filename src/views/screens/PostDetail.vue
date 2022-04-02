@@ -46,7 +46,7 @@
                 </div>
               </article>
               <hr />
-              <comment :postCode="postCode" />
+              <comment id="comment" :postCode="postCode" />
             </article>
           </div>
           <div class="column">
@@ -69,7 +69,13 @@
       </div>
     </div>
 
-    <a href="#link" class="button is-rounded is-primary is-medium">
+    <a href="#comment" class="button comment is-rounded is-primary is-medium">
+      <span class="icon">
+        <font-awesome-icon icon="comment" />
+      </span>
+    </a>
+
+    <a href="#link" class="button download is-rounded is-primary is-medium">
       <span class="icon">
         <font-awesome-icon icon="download" />
       </span>

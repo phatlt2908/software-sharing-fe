@@ -10,10 +10,19 @@
             border-radius: $radius-rounded;
             padding-left: 1em;
             padding-right: 1em;
+            box-shadow: 5px 5px 15px gray;
+        }
+
+        &.download {
             position: fixed;
             bottom: 20px;
             left: 20px;
-            box-shadow: 5px 5px 15px gray;
+        }
+
+        &.comment {
+            position: fixed;
+            bottom: 80px;
+            left: 20px;
         }
     }
 }
