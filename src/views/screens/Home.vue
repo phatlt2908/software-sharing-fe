@@ -12,9 +12,9 @@
             </h1>
             <div class="content">
               <p>
-                <strong>Không</strong> dẫn đến các link
-                rác, <strong>không</strong> phải làm các bước phức tạp để tìm
-                mật khẩu file nén
+                <strong>Không</strong> dẫn đến các link rác,
+                <strong>không</strong> phải làm các bước phức tạp để tìm mật
+                khẩu file nén
               </p>
             </div>
             <div class="icon-text has-text-success">
@@ -31,16 +31,19 @@
         </div>
       </div>
     </section>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Top from "@/views/components/Top.vue";
+import Footer from "@/views/components/Footer.vue";
 
 export default {
   name: "Home",
   components: {
     Top,
+    Footer
   },
 };
 </script>

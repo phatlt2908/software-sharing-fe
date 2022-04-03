@@ -1,0 +1,133 @@
+:root {
+    --newsletter-strip-size: 16px;
+    --newsletter-border-size: 1.5rem;
+}
+
+@media screen and (min-width: 1216px) {
+    :root {
+        --newsletter-border-size: 5.625rem;
+    }
+    .bd-drawing {
+        display: block;
+    }
+    .bd-newsletter-heading {
+        grid-template-columns: 4.5rem 4.5rem 1fr 1fr 4.5rem 4.5rem;
+    }
+    .bd-newsletter-box {
+        box-shadow: 0 1em 2em rgba(0, 0, 0, 0.05);
+    }
+}
+
+#footer {
+    background: #fafafa;
+
+    :root {
+        --newsletter-strip-size: 16px;
+        --newsletter-border-size: 1.5rem;
+    }
+
+    .bd-newsletter {
+        padding: var(--newsletter-border-size);
+        padding-top: 5rem;
+    }
+
+    .bd-newsletter-box {
+        background-color: #fff;
+        background-image: url(/images/newsletter-strip.png);
+        background-repeat: repeat-x;
+        background-size: 96px var(--newsletter-strip-size);
+        border-radius: 1.5em;
+    }
+
+    .bd-index-section {
+        padding-bottom: 9rem;
+        padding-top: 9rem;
+    }
+
+    .bd-newsletter-heading {
+        padding-left: 3rem;
+        padding-right: 3rem;
+
+        > .column > .icon {
+            height: 1.125em;
+            width: 1.125em;
+            margin-right: 1rem;
+        }
+
+        .title {
+            font-weight: 400;
+            display: inline;
+
+            strong {
+                color: inherit;
+                font-weight: 600;
+            }
+
+            small {
+                color: #7a7a7a;
+                display: block;
+                font-size: 0.75em;
+            }
+        }
+    }
+
+    .bd-footer {
+        padding: 3rem 1.5rem 6rem;
+
+        .bd-footer-links {
+            padding-bottom: 6rem;
+
+            .bd-footer-link {
+                margin-top: 0.5rem;
+                a {
+                    color: #4a4a4a;
+                }
+            }
+
+            .bd-footer-link-title {
+                font-size: 1.25rem;
+                font-weight: 600;
+                a {
+                    color: #363636;
+                }
+            }
+        }
+
+        .bd-footer-title {
+            color: #7a7a7a;
+            font-size: 1.25rem;
+            line-height: 1.25;
+            margin-bottom: 0.5rem;
+            transition-duration: 86ms;
+            transition-property: color;
+
+            strong {
+                color: #363636;
+                font-weight: 600;
+            }
+        }
+
+        .bd-footer-tsp {
+            color: #b5b5b5;
+            margin-top: 1.5rem;
+        }
+
+        .bd-has-subtitle {
+            a {
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            a:not(:hover) em {
+                color: #b5b5b5;
+            }
+
+            a em {
+                display: block;
+                font-size: .875rem;
+                font-style: normal;
+            }
+        }
+    }
+}

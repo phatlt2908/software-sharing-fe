@@ -23,6 +23,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
 import { faPen } from '@fortawesome/free-solid-svg-icons'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 import { faWindows } from '@fortawesome/free-brands-svg-icons'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
@@ -52,5 +53,6 @@ library.add(
     faTimes,
     faExclamationCircle,
     faPen,
-    faCheckCircle
+    faCheckCircle,
+    faPaperPlane
 )
