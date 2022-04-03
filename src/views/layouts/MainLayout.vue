@@ -20,12 +20,14 @@
       </div>
     </section>
     <router-view></router-view>
+    <Footer />
   </body>
 </template>
 
 <script>
 import Top from "@/views/components/Top.vue";
 import Hero from "@/views/components/Hero.vue";
+import Footer from "@/views/components/Footer.vue";
 import { mapState } from "vuex"
 
 export default {
@@ -36,7 +38,8 @@ export default {
   },
   components: {
     Top,
-    Hero
+    Hero,
+    Footer
   },
   computed: {
     ...mapState(["breadcrumbs"])
