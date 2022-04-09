@@ -7,7 +7,7 @@
             <div class="bd-hero-heading">
               <h1 class="title is-2">
                 <span class="icon">
-                  <font-awesome-icon :icon="category ? category.icon : ''" />
+                  <font-awesome-icon v-if="category && category.icon" :icon="category.icon" />
                 </span>
                 <p v-if="category && category.title">{{ category.title }}</p>
               </h1>

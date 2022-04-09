@@ -107,7 +107,7 @@ export default {
     };
   },
   created() {
-    this.postCode = this.$route.query.postCode;
+    this.postCode = this.$route.params.postCode;
     this.loadDetail();
   },
   mounted() {

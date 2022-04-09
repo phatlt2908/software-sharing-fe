@@ -29,7 +29,7 @@ const screen = {
         name: "Ai cũng cần"
     },
     DETAIL: {
-        path: "detail",
+        path: "detail/:postCode",
         name: "Bài viết"
     },
     NOT_FOUND: {
