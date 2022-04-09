@@ -1,5 +1,6 @@
-var PrerenderSpaPlugin = require('prerender-spa-plugin')
-var path = require('path')
+const PrerenderSpaPlugin = require('prerender-spa-plugin');
+const path = require('path');
+const PuppeteerRenderer = PrerenderSpaPlugin.PuppeteerRenderer;
 
 module.exports = {
     // css: {
@@ -23,21 +24,24 @@ module.exports = {
         return {
             plugins: [
                 new PrerenderSpaPlugin(
-                    // Absolute path to compiled SPA
-                    path.join(__dirname, 'dist'),
-                    // List of routes to prerender
-                    [
-                        '/',
-                        '/home',
-                        '/game',
-                        '/office',
-                        '/graphic',
-                        '/technique',
-                        '/os',
-                        '/common',
-                        '/detail/kms-pico-11',
-                        '/detail/download-office-2016-professional-plus-full',
-                    ],
+                    {
+                        // Absolute path to compiled SPA
+                        staticDir: path.join(__dirname, 'dist'),
+                        // List of routes to prerender
+                        routes: [
+                            '/',
+                            '/home',
+                            '/game',
+                            '/office',
+                            '/graphic',
+                            '/technique',
+                            '/os',
+                            '/common',
+                            '/detail/kms-pico-11',
+                            '/detail/download-office-2016-professional-plus-full',
+                        ],
+                        renderer: new PuppeteerRenderer()
+                    }
                 ),
             ]
         }
