@@ -198,7 +198,7 @@ export default {
       this.$emit("changePage", this.paging);
     },
     directDetail(postCode) {
-      this.$router.push({ name: "postDetail", query: { postCode: postCode } });
+      this.$router.push({ name: "postDetail", params: { postCode: postCode } });
       this.$emit("directDetail");
     },
   },
