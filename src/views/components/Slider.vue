@@ -34,7 +34,6 @@
         </slide>
 
         <template #addons>
-          <navigation />
           <pagination />
         </template>
       </carousel>
