@@ -52,7 +52,7 @@ module.exports = {
                             "/detail/download-game-forza-horizon-5",
                         ],
                         renderer: new PuppeteerRenderer({
-                            maxConcurrentRoutes: 5,
+                            maxConcurrentRoutes: 2,
                         }),
                     }
                 ),
