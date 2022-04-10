@@ -9,23 +9,23 @@ const screen = {
         name: "Games"
     },
     OFFICE: {
-        path: "office",
+        path: "/office",
         name: "Phần mềm văn phòng"
     },
     GRAPHIC: {
-        path: "graphic",
+        path: "/graphic",
         name: "Phần mềm đồ họa"
     },
     TECHNIQUE: {
-        path: "technique",
+        path: "/technique",
         name: "Phần mềm kỹ thuật"
     },
     OS: {
-        path: "os",
+        path: "/os",
         name: "Windows, hệ điều hành, ghost"
     },
     COMMON: {
-        path: "common",
+        path: "/common",
         name: "Ai cũng cần"
     },
     DETAIL: {

@@ -40,6 +40,8 @@
         }
 
         .card-content {
+            text-align: left;
+            
             .media {
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
@@ -48,6 +50,13 @@
                 text-overflow: ellipsis;
             }
             .content {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .title {
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
