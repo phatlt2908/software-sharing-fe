@@ -183,6 +183,22 @@ html {
     background-color: var(--common-light);
 }
 
+.color-office {
+    color: var(--office-dark);
+}
+.color-game {
+    color: var(--game-dark);
+}
+.color-graphic {
+    color: var(--success-dark);
+}
+.color-technique {
+    color: var(--tech-dark);
+}
+.color-os {
+    color: var(--link-dark);
+}
+
 .text-center {
     text-align: center;
 }
