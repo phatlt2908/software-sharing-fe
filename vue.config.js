@@ -51,7 +51,9 @@ module.exports = {
                             "/detail/download-visio-2016-professional-plus",
                             "/detail/download-game-forza-horizon-5",
                         ],
-                        renderer: new PuppeteerRenderer()
+                        renderer: new PuppeteerRenderer({
+                            maxConcurrentRoutes: 5,
+                        }),
                     }
                 ),
             ]
