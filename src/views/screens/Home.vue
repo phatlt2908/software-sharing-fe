@@ -44,7 +44,7 @@
         :sliderList="popularList"
         :isAutoPlay="false"
       />
-      <div v-else class="columns is-centered pb-3 mb-3">
+      <div v-else class="columns is-centered pb-3 mb-3 text-center">
         <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
       </div>
     </div>
@@ -64,7 +64,7 @@
         class="background-office"
         :background="'background-office'"
       />
-      <div v-else class="columns is-centered pb-3 mb-3">
+      <div v-else class="columns is-centered pb-3 mb-3 text-center">
         <font-awesome-icon icon="circle-notch" class="fa-spin color-office" size="5x" />
       </div>
     </div>
@@ -84,7 +84,7 @@
         class="background-game"
         :background="'background-game'"
       />
-      <div v-else class="columns is-centered pb-3 mb-3">
+      <div v-else class="columns is-centered pb-3 mb-3 text-center">
         <font-awesome-icon icon="circle-notch" class="fa-spin color-game" size="5x" />
       </div>
     </div>
@@ -104,7 +104,7 @@
         class="background-graphic"
         :background="'background-graphic'"
       />
-      <div v-else class="columns is-centered pb-3 mb-3">
+      <div v-else class="columns is-centered pb-3 mb-3 text-center">
         <font-awesome-icon icon="circle-notch" class="fa-spin color-graphic" size="5x" />
       </div>
     </div>
@@ -124,7 +124,7 @@
         class="background-technique"
         :background="'background-technique'"
       />
-      <div v-else class="columns is-centered pb-3 mb-3">
+      <div v-else class="columns is-centered pb-3 mb-3 text-center">
         <font-awesome-icon icon="circle-notch" class="fa-spin color-technique" size="5x" />
       </div>
     </div>
@@ -144,7 +144,7 @@
         class="background-os"
         :background="'background-os'"
       />
-      <div v-else class="columns is-centered pb-3 mb-3">
+      <div v-else class="columns is-centered pb-3 mb-3 text-center">
         <font-awesome-icon icon="circle-notch" class="fa-spin color-os" size="5x" />
       </div>
     </div>
@@ -164,7 +164,7 @@
         class="background-gray"
         :background="'background-gray'"
       />
-      <div v-else class="columns is-centered pb-3 mb-3">
+      <div v-else class="columns is-centered pb-3 mb-3 text-center">
         <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
       </div>
     </div>
