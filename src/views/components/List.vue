@@ -57,7 +57,7 @@
       <hr />
     </div>
     <div v-if="isLoaded" class="columns is-multiline is-mobile soft-list">
-      <div
+      <router-link
         v-for="post in list"
         :key="post.id"
         class="
@@ -68,6 +68,7 @@
           is-full-widescreen
           is-full-fullhd
         "
+        :to="{ name: 'postDetail', params: { postCode: post.code } }"
         @click="directDetail(post.code)"
       >
         <div class="card">
@@ -97,7 +98,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </router-link>
     </div>
     <div v-else class="columns is-centered">
       <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
@@ -197,8 +198,7 @@ export default {
       this.paging.page = page;
       this.$emit("changePage", this.paging);
     },
-    directDetail(postCode) {
-      this.$router.push({ name: "postDetail", params: { postCode: postCode } });
+    directDetail() {
       this.$emit("directDetail");
     },
   },

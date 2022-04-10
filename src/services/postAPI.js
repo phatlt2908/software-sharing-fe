@@ -38,8 +38,8 @@ class postAPI {
         return axios.get(apiConst.GET_TAG_LIST);
     }
 
-    getPopularPost() {
-        return axios.get(apiConst.POPULAR_POST);
+    getPopularPost(data) {
+        return axios.post(apiConst.POPULAR_POST, data);
     }
 
     getNewestPost() {

@@ -187,9 +187,9 @@ export default {
     },
   },
   watch: {
-    "$route.query.postCode"() {
-      if (this.$route.query.postCode) {
-        this.postCode = this.$route.query.postCode;
+    "$route.params.postCode"() {
+      if (this.$route.params.postCode) {
+        this.postCode = this.$route.params.postCode;
         this.loadDetail();
         this.increaseReadNum();
       }

@@ -157,3 +157,32 @@ html {
 .disable-select {
     user-select: none;
 }
+
+.background-white {
+    background-color: none;
+}
+.background-gray {
+    background-color: var(--gray-background);
+}
+.background-office {
+    background-color: var(--office-light);
+}
+.background-game {
+    background-color: var(--game-light);
+}
+.background-graphic {
+    background-color: var(--success-light);
+}
+.background-technique {
+    background-color: var(--tech-light);
+}
+.background-os {
+    background-color: var(--link-light);
+}
+.background-common {
+    background-color: var(--common-light);
+}
+
+.text-center {
+    text-align: center;
+}

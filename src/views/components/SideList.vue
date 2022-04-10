@@ -1,7 +1,8 @@
 <template>
   <div id="sideList">
     <div v-if="isLoaded" class="columns is-multiline is-mobile soft-list">
-      <div
+      <router-link
+        :to="{ name: 'postDetail', params: { postCode: post.code } }"
         v-for="post in list"
         :key="post.id"
         class="column is-full"
@@ -29,7 +30,7 @@
             class="pr-4 pl-2"
           />
         </div>
-      </div>
+      </router-link>
     </div>
     <div v-else class="columns is-centered">
       <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
@@ -55,8 +56,7 @@ export default {
     },
   },
   methods: {
-    directDetail(postCode) {
-      this.$router.push({ name: "postDetail", params: { postCode: postCode } });
+    directDetail() {
       this.$emit("directDetail");
     },
   },

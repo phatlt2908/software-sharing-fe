@@ -9,7 +9,7 @@
           </h2>
         </div>
       </section>
-      <Slider v-if="isLoadedPopular" :sliderList="popularList" />
+      <Slider v-if="isLoadedPopular" :sliderList="popularList" :background="'background-gray'"/>
       <div v-else class="columns is-centered">
         <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
       </div>
