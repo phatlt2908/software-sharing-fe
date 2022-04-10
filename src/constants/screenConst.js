@@ -5,7 +5,7 @@ const screen = {
     },
 
     GAME: {
-        path: "game",
+        path: "/game",
         name: "Games"
     },
     OFFICE: {
