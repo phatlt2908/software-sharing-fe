@@ -52,7 +52,7 @@
       <section class="section pb-0">
         <div class="container">
           <router-link :to="{ name: 'office' }">
-            <h1 class="title text-center">Phần mềm văn phòng</h1>
+            <h1 class="title text-center color-office">Phần mềm văn phòng</h1>
             <hr>
           </router-link>
         </div>
@@ -65,14 +65,14 @@
         :background="'background-office'"
       />
       <div v-else class="columns is-centered pb-3 mb-3">
-        <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
+        <font-awesome-icon icon="circle-notch" class="fa-spin color-office" size="5x" />
       </div>
     </div>
     <div class="background-game">
       <section class="section pb-0">
         <div class="container">
           <router-link :to="{ name: 'game' }">
-            <h1 class="title text-center">Game</h1>
+            <h1 class="title text-center color-game">Game</h1>
             <hr>
           </router-link>
         </div>
@@ -85,14 +85,14 @@
         :background="'background-game'"
       />
       <div v-else class="columns is-centered pb-3 mb-3">
-        <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
+        <font-awesome-icon icon="circle-notch" class="fa-spin color-game" size="5x" />
       </div>
     </div>
     <div class="background-graphic">
       <section class="section pb-0">
         <div class="container">
           <router-link :to="{ name: 'graphic' }">
-            <h1 class="title text-center">Phần mềm đồ họa</h1>
+            <h1 class="title text-center color-graphic">Phần mềm đồ họa</h1>
             <hr>
           </router-link>
         </div>
@@ -105,14 +105,14 @@
         :background="'background-graphic'"
       />
       <div v-else class="columns is-centered pb-3 mb-3">
-        <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
+        <font-awesome-icon icon="circle-notch" class="fa-spin color-graphic" size="5x" />
       </div>
     </div>
     <div class="background-technique">
       <section class="section pb-0">
         <div class="container">
           <router-link :to="{ name: 'technique' }">
-            <h1 class="title text-center">Phần mềm kỹ thuật</h1>
+            <h1 class="title text-center color-technique">Phần mềm kỹ thuật</h1>
             <hr>
           </router-link>
         </div>
@@ -125,14 +125,14 @@
         :background="'background-technique'"
       />
       <div v-else class="columns is-centered pb-3 mb-3">
-        <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
+        <font-awesome-icon icon="circle-notch" class="fa-spin color-technique" size="5x" />
       </div>
     </div>
     <div class="background-os">
       <section class="section pb-0">
         <div class="container">
           <router-link :to="{ name: 'os' }">
-            <h1 class="title text-center">Hệ điều hành</h1>
+            <h1 class="title text-center color-os">Hệ điều hành</h1>
             <hr>
           </router-link>
         </div>
@@ -145,14 +145,14 @@
         :background="'background-os'"
       />
       <div v-else class="columns is-centered pb-3 mb-3">
-        <font-awesome-icon icon="circle-notch" class="fa-spin" size="5x" />
+        <font-awesome-icon icon="circle-notch" class="fa-spin color-os" size="5x" />
       </div>
     </div>
     <div>
       <section class="section background-gray">
         <div class="container">
           <router-link :to="{ name: 'common' }">
-            <h1 class="title text-center">Ai cũng cần</h1>
+            <h1 class="title text-center color-common">Ai cũng cần</h1>
             <hr>
           </router-link>
         </div>
