@@ -128,7 +128,7 @@
 <script>
 import { mapState } from "vuex";
 export default {
-  name: "footer",
+  name: "footer and feedback",
   computed: {
     ...mapState(["category"]),
   },

@@ -36,9 +36,9 @@ export default {
   },
   data() {
     return {
-      popularList: null,
+      popularList: [],
       isLoadedPopular: false,
-      newestList: null,
+      newestList: [],
       isLoadedNewest: false,
     };
   },
@@ -48,8 +48,12 @@ export default {
   },
   methods: {
     getPopularList() {
+      const request = {
+        itemsPerPage: 5,
+        page: 1,
+      }
       postAPI
-        .getPopularPost()
+        .getPopularPost(request)
         .then((res) => {
           this.popularList = res.data.postList;
           this.isLoadedPopular = true;
