@@ -11,7 +11,7 @@
         <div class="card">
           <div class="columns mb-0">
             <div class="card-image column is-4 pb-0">
-              <img :src="post.imageUrl" alt="Placeholder image" />
+              <img :src="post.imageUrl" referrerpolicy="no-referrer" :alt="post.imageAlt" />
             </div>
             <div class="side-list_card-content column is-8 pr-2 pb-0">
               <div class="media pr-4">

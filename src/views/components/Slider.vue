@@ -13,7 +13,7 @@
             :to="{ name: 'postDetail', params: { postCode: slider.code } }"
           >
             <div v-show="slider.imageUrl" class="card-image">
-              <img :src="slider.imageUrl" alt="Placeholder image" />
+              <img :src="slider.imageUrl" referrerpolicy="no-referrer" :alt="slider.imageAlt" />
             </div>
             <div class="card-content">
               <div class="media">
