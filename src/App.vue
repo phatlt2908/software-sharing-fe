@@ -19,7 +19,7 @@ export default {
       charset: "UTF-8",
       description:
         "Đây nè! Chia sẻ phần mềm, ứng dụng, games... miễn phí. Không link rác, không phải làm các bước phức tạp để tìm mật khẩu file nén",
-      keywords: "dayne.run, Đây nè, Phần mềm, Tải game offline, Phần mềm miễn phí, word, tải office",
+      // keywords: "dayne.run, Đây nè, Phần mềm, Tải game offline, Phần mềm miễn phí, word, tải office",
     });
   },
 };
