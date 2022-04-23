@@ -11,9 +11,9 @@
                 </span>
                 <p v-if="category && category.title">{{ category.title }}</p>
               </h1>
-              <p v-if="category && category.subtitle" class="subtitle is-3 mt-3">
+              <h1 v-if="category && category.subtitle" class="subtitle is-3 mt-3">
                 {{ category.subtitle }}
-              </p>
+              </h1>
               <slot></slot>
             </div>
             <div class="bd-hero-carbon"></div>

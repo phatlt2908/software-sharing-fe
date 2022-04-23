@@ -51,11 +51,17 @@ module.exports = {
                             "/detail/download-game-forza-horizon-5",
                             "/detail/kms-pico-11",
                             "/detail/chicken-invaders-4",
+                            "/detail/photoshop-2021",
+                            "/detail/huong-dan-tat-windows-defender",
                         ],
                         renderer: new PuppeteerRenderer({
                             maxConcurrentRoutes: 2,
                         }),
                     }
+                    // SQL get list detail
+                    // select concat('"/detail/', post.code, '",') 
+                    // from post
+                    // order by id asc
                 ),
             ]
         }
