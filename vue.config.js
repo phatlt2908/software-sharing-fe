@@ -53,6 +53,8 @@ module.exports = {
                             "/detail/chicken-invaders-4",
                             "/detail/photoshop-2021",
                             "/detail/huong-dan-tat-windows-defender",
+                            "/detail/auto-cad-2020",
+                            "/detail/adobe-photoshop-cc-2019",
                         ],
                         renderer: new PuppeteerRenderer({
                             maxConcurrentRoutes: 2,
