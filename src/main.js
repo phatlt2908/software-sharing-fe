@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import VueSocketIO from 'vue-3-socket.io';
 import router from './router';
 import VueGtag from "vue-gtag";
 import { createMetaManager } from 'vue-meta';
@@ -21,6 +22,11 @@ vueApp.use(VueGtag, {
     config: { id: "G-K099QQT9WT" }
 });
 vueApp.use(createMetaManager());
+vueApp.use(new VueSocketIO({
+    debug: true,
+    connection: 'http://localhost:8081',
+    credentials: true
+}))
 vueApp.component("font-awesome-icon", FontAwesomeIcon);
 
 vueApp.mount('#app');
