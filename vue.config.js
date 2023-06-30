@@ -55,6 +55,8 @@ module.exports = {
               "/detail/adobe-photoshop-cc-2019",
               "/detail/adobe-illustrator-2022-v26-0-0-73-x64",
               "/detail/lightroom-classic-2023-v12-1-0",
+              "/detail/abbyy-fine-reader-15",
+              "/detail/photoshop-2023-full",
             ],
             renderer: new PuppeteerRenderer({
               maxConcurrentRoutes: 2,
