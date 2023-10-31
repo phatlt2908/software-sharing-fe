@@ -57,6 +57,7 @@ module.exports = {
               "/detail/lightroom-classic-2023-v12-1-0",
               "/detail/abbyy-fine-reader-15",
               "/detail/photoshop-2023-full",
+              "/detail/fix-unlicensed-adobe",
             ],
             renderer: new PuppeteerRenderer({
               maxConcurrentRoutes: 2,
